@@ -1,6 +1,6 @@
 # An Efficient Code Typing Trainer
  
-Authors: \<[Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://github.com/Danin1993)\>
+Authors: \<[Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://github.com/Danin1993), [Brian Arciga](https://github.com/brianarciga1)\>
 
 ## Project Description
 * Typing is an essential skill in today's technology-based society, especially to people who type for a living. The first thing that comes to mind with the thought of "professional typist" is programming. As a programmer, be it in C++ or SQL, typing is the most important interface between a programmer and their computer. Typing efficiency is important to programmers because they need to be efficient in writing code, and finding the where each letter is on a keyboard should be the least of their worries. 
