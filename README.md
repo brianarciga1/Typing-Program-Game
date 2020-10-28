@@ -1,10 +1,10 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\<"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
+# \<An Efficient Code Typing Trainer\>
  > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
+ > Authors: \<[Scott Vo](https://github.com/hscottvo) [Danin ](https://github.com)\>
  
  > You will be forming a group of **THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
  
@@ -17,6 +17,12 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
+* Typing is an essential skill in today's technology-based society, especially to people who type for a living. The first thing that comes to mind with the thought of "professional typist" is programming. As a programmer, be it in C++ or SQL, typing is the most important interface between a programmer and their computer. Typing efficiency is important to programmers because they need to be efficient in writing code, and finding the where each letter is on a keyboard should be the least of their worries. 
+  * There will be choices of quotes pulled from the internet, random strings of words, and we are looking to add code snippets as well if we can do it in time.
+  * Typing tests will be timed, with choices of time limits, such as 30 seconds, 1 minute, or two minutes. 
+* We are considering using [windows.h](https://docs.microsoft.com/en-us/windows/win32/learnwin32/learn-to-program-for-windows) to do our window managing and keypress detection. 
+* The input will be the keypresses of the user. The output will be the words that the user types, in colors depending on the correctness of the user's input. 
+
  > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
