@@ -1,6 +1,6 @@
 # An Efficient Code Typing Trainer
  
-Authors: \<[Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://github.com/Danin1993), [Brian Arciga](https://github.com/brianarciga1)\>
+Authors: [Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://github.com/Danin1993), [Brian Arciga](https://github.com/brianarciga1)
 
 ## Project Description
 * Typing is an essential skill in today's technology-based society, especially to people who type for a living. The first thing that comes to mind with the thought of "professional typist" is programming. As a programmer, be it in C++ or SQL, typing is the most important interface between a programmer and their computer. Typing efficiency is important to programmers because they need to be efficient in writing code, and finding the where each letter is on a keyboard should be the least of their worries. 
@@ -19,6 +19,7 @@ Authors: \<[Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://g
   * Observer will be used to keep track of users on a leader board. Users will be ranked based on their typing efficiency.
     * There would be three main functions. Users will have the option to add and reset their scores.
     * Users should also be able to return the score for the top users.
+    * A leaderboard object would contain child Score (name TBD) objects and would change and return results based on test results and score queries. 
  > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
