@@ -16,6 +16,9 @@ Authors: \<[Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://g
   * Abstract Factory will be useful in instantiating the above objects, as some of them are very similar.
     * Depending on the user's settings, the program will present them with different forms of text, such as words or quotes. These would have different classes with different implementations, so the factory would help us organize the instantiation of the test material. 
     * There will be separate factories for each type of test material. For example, "Word" for a set of random words, "Quote" for a random 1-2 sentence quote, or "Paragraph" for a longer paragraph. 
+  * Observer will be used to keep track of users on a leader board. Users will be ranked based on their typing efficiency.
+    * There would be three main functions. Users will have the option to add and reset their scores.
+    * Users should also be able to return the score for the top users.
  > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
