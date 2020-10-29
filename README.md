@@ -8,7 +8,7 @@ Authors: \<[Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://g
   * Typing tests will be timed, with choices of time limits, such as 30 seconds, 1 minute, or two minutes. 
 * We are considering using [windows.h](https://docs.microsoft.com/en-us/windows/win32/learnwin32/learn-to-program-for-windows) to do our window managing and keypress detection. 
 * The input will be the keypresses of the user. The output will be the words that the user types, in colors depending on the correctness of the user's input. 
-* We intend to use the Composite and Abstract Factory design patterns for the project. 
+* We intend to use the Composite, Observer and Abstract Factory design patterns for the project. 
   * Composite will be useful to manage the multiple components that will be a part of the program window, such as the typing box, text prompt, and timer. 
     * A Canvas object that inherits a Graphic object would be the main part of the window, and the other components would lie on it.
     * Then, a something like a Textbox object would be overlayed onto the Canvas to create an interface for the user to type the words that show up on the screen.
