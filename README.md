@@ -8,14 +8,16 @@ Authors: [Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://git
   * Typing tests will be timed, with choices of time limits, such as 30 seconds, 1 minute, or two minutes. 
 * We are considering using [windows.h](https://docs.microsoft.com/en-us/windows/win32/learnwin32/learn-to-program-for-windows) to do our window managing and keypress detection. 
 * The input will be the keypresses of the user. The output will be the words that the user types, in colors depending on the correctness of the user's input. 
-* We intend to use the Composite, Observer and Abstract Factory design patterns for the project. 
+* We intend to use the Composite, Observer and Strategy design patterns for the project. 
   * Composite will be useful to manage the multiple components that will be a part of the program window, such as the typing box, text prompt, and timer. 
     * A Canvas object that inherits a Graphic object would be the main part of the window, and the other components would lie on it.
     * Then, a something like a Textbox object would be overlayed onto the Canvas to create an interface for the user to type the words that show up on the screen.
     * Each Graphic object that contains text in the form of a string will have member functions that will allow the text and its background change color, for example when a user gets a correct or incorrect spelling of a word.
-  * Abstract Factory will be useful in instantiating the above objects, as some of them are very similar.
-    * Depending on the user's settings, the program will present them with different forms of text, such as words or quotes. These would have different classes with different implementations, so the factory would help us organize the instantiation of the test material. 
-    * There will be separate factories for each type of test material. For example, "Word" for a set of random words, "Quote" for a random 1-2 sentence quote, or "Paragraph" for a longer paragraph. 
+  * Strategy pattern will be used to read and display typing material. 
+    * There will be at least 3 main strategies, creating typing material with:
+      1. Quotes
+      2. Paragraphs
+      3. A collection of random words
   * Observer will be used to keep track of users on a leader board. Users will be ranked based on their typing efficiency.
     * There would be three main functions. Users will have the option to add and reset their scores.
     * Users should also be able to return the score for the top users.
