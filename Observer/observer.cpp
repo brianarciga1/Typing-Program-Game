@@ -1,3 +1,6 @@
+#ifndef __OBSERVER_HPP__
+#define __OBSERVER_HPP__
+
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -10,7 +13,7 @@ using namespace std;
 class IObserver {
  public:
   virtual ~IObserver(){};
-  virtual void Update(const std::string &message_from_subject) = 0;
+  virtual void Update(const string &message_from_subject) = 0;
 };
 
 class ISubject {
@@ -24,7 +27,7 @@ class ISubject {
 class Subject : public ISubject {
  public:
   virtual ~Subject() {
-    std::cout << "Goodbye, I was the Subject.\n";
+    cout << "Goodbye, I was the Subject.\n";
   }
 
   void Attach(IObserver *observer) override {
@@ -34,7 +37,7 @@ class Subject : public ISubject {
     list_observer_.remove(observer);
   }
   void Notify() override {
-    std::list<IObserver *>::iterator iterator = list_observer_.begin();
+    list<IObserver *>::iterator iterator = list_observer_.begin();
     HowManyObserver();
     while (iterator != list_observer_.end()) {
       (*iterator)->Update(message_);
@@ -42,7 +45,7 @@ class Subject : public ISubject {
     }
   }
 
-  void CreateMessage(std::string message = "Empty") {
+  void CreateMessage(string message = "Empty") {
     this->message_ = message;
     Notify();
   }
@@ -51,19 +54,19 @@ class Subject : public ISubject {
   }
 
  private:
-  std::list<IObserver *> list_observer_;
-  std::string message_;
+  list<IObserver *> list_observer_;
+  string message_;
 };
 
 class Observer : public IObserver {
  public:
   Observer(Subject &subject) : subject_(subject) {
     this->subject_.Attach(this);
-    std::cout << "Hello, User \"" << ++Observer::static_number_ << "\".\n";
+    cout << "Hello, User \"" << ++Observer::static_number_ << "\".\n";
     this->number_ = Observer::static_number_;
   }
   virtual ~Observer() {
-    std::cout << "Goodbye, User \"" << this->number_ << "\".\n";
+    cout << "Goodbye, User \"" << this->number_ << "\".\n";
   }
 
   void Update(const std::string &message_from_subject) override {
@@ -79,7 +82,7 @@ class Observer : public IObserver {
   }
 
  private:
-  std::string message_from_subject_;
+  string message_from_subject_;
   Subject &subject_;
   static int static_number_;
   int number_;
@@ -116,3 +119,5 @@ int main() {
   ClientCode();
   return 0;
 }
+
+#endif
