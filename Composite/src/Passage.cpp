@@ -34,7 +34,6 @@ bool Passage::check() {
 }
 
 void Passage::display(unsigned row, unsigned col) {
-    addstr("This is where I am typing \\/");
     unsigned curr_row = row + 1;
     unsigned curr_col = col;
     unsigned i = 0;
@@ -43,9 +42,21 @@ void Passage::display(unsigned row, unsigned col) {
             curr_col = col;
             curr_row += 1;
         }
-        if(!text.at(i)->check() && i < curr_word) attron(A_STANDOUT);
-        text.at(i)->display(curr_row, curr_col);
-        attroff(A_STANDOUT);
+        if (!text.at(i)->check() && curr_word != i) {
+            text.at(i)->display(curr_row, curr_col);
+        }
+        else {
+            attron(A_STANDOUT);
+            text.at(i)->display(curr_row, curr_col);
+            attroff(A_STANDOUT);
+        }
+        
+        // if(i < curr_word && !text.at(i)->check()) {
+        //     attron(A_STANDOUT);
+        //     text.at(i)->display(curr_row, curr_col); 
+        //     attroff(A_STANDOUT);
+        // }
+        // else if (i >= curr_word) text.at(i)->display(curr_row, curr_col);
         addstr(" ");
         curr_col += text.at(i)->len() + 1;
     }
