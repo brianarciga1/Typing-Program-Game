@@ -38,11 +38,11 @@ Authors: [Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://git
  ## Installation/Usage
 To build and compile: 
   In your terminal, install prerequisites by entering the command:  
-  <code>sudo apt-get install libncurses5-dev libncursesw5-dev</code>
+  <code>sudo apt-get install libncurses5-dev libncursesw5-dev</code>  
   Then, enter the command:  
-  <code>sudo yum install ncurses-devel</code>
+  <code>sudo yum install ncurses-devel</code>  
 To run the existing executable, enter the command:  
-  <code>./TypingTest</code>
+  <code>./TypingTest</code>  
  > Instructions on installing and running your application
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
