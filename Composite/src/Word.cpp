@@ -18,15 +18,20 @@ unsigned Word::len() {
 
 void Word::display(bool curr, unsigned row, unsigned col) {
     move(row, col);
-    const char* character = nullptr;
+    const char* character = 0;
     for(int i = 0; i < this->len(); ++i) {
-        if (curr && i == 0) {
-            attron(A_STANDOUT);
+        if (curr) {
+            if (i == 0) {
+                attron(A_STANDOUT);
+            }
+            else {
+                attroff(A_STANDOUT);
+            } 
         }
         character = new char(reference.data()[i]);
         addstr(character);
-        attroff(A_STANDOUT);
     }
+    
     // const char* first_char = new char(reference.data()[0]);
     // const char* rest = &reference.data()[1];
     // if(curr) attron(A_STANDOUT);

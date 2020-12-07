@@ -55,7 +55,7 @@ void Passage::display(bool curr, unsigned row, unsigned col) {
         }
         if(i < curr_word && !text.at(i)->check()) attron(A_STANDOUT);
         text.at(i)->display(i == curr_word, curr_row, curr_col);
-
+        attroff(A_STANDOUT);
         
         // if(i < curr_word && !text.at(i)->check()) {
         //     attron(A_STANDOUT);
