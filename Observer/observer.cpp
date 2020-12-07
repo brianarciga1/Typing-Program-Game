@@ -10,7 +10,7 @@ using namespace std;
 class IObserver {
  public:
   virtual ~IObserver(){};
-  virtual void Update(const std::string &message_from_subject) = 0;
+  virtual void Update(const string &message_from_subject) = 0;
 };
 
 class ISubject {
@@ -24,7 +24,7 @@ class ISubject {
 class Subject : public ISubject {
  public:
   virtual ~Subject() {
-    std::cout << "Goodbye, I was the Subject.\n";
+    cout << "Goodbye, I was the Subject. (I UPDATE AND ADD REMOVE USERS)\n";
   }
 
   void Attach(IObserver *observer) override {
@@ -34,7 +34,7 @@ class Subject : public ISubject {
     list_observer_.remove(observer);
   }
   void Notify() override {
-    std::list<IObserver *>::iterator iterator = list_observer_.begin();
+    list<IObserver *>::iterator iterator = list_observer_.begin();
     HowManyObserver();
     while (iterator != list_observer_.end()) {
       (*iterator)->Update(message_);
@@ -47,23 +47,25 @@ class Subject : public ISubject {
     Notify();
   }
   void HowManyObserver() {
-    std::cout << "There are " << list_observer_.size() << " registered users.\n";
+    cout << "There are " << list_observer_.size() << " registered users.\n";
   }
 
  private:
-  std::list<IObserver *> list_observer_;
-  std::string message_;
+  list<IObserver *> list_observer_;
+  string message_;
 };
 
 class Observer : public IObserver {
  public:
   Observer(Subject &subject) : subject_(subject) {
+    cout << "Hello! Please enter name: "<<endl;
+    cin >> username;
     this->subject_.Attach(this);
-    std::cout << "Hello, User \"" << ++Observer::static_number_ << "\".\n";
+    cout << "Hello, "<< username << " (User \"" << ++Observer::static_number_ << "\").\n";
     this->number_ = Observer::static_number_;
   }
   virtual ~Observer() {
-    std::cout << "Goodbye, User \"" << this->number_ << "\".\n";
+    cout << "Goodbye, "<< username << " (User \"" << this->number_ << "\").\n";
   }
 
   void Update(const std::string &message_from_subject) override {
@@ -72,44 +74,61 @@ class Observer : public IObserver {
   }
   void RemoveMeFromTheList() {
     subject_.Detach(this);
-    cout << "User \"" << number_ << "\" has unregistered.\n";
+    cout << username <<" (User \"" << number_ << "\") has unregistered.\n";
   }
   void PrintInfo() {
-    cout << "User \"" << this->number_ << "\": you have a new message --> " << this->message_from_subject_ << "\n";
+    cout << username <<" (User \"" << this->number_ << "\"): you have a new message --> " << this->message_from_subject_ << "\n";
   }
 
  private:
-  std::string message_from_subject_;
+  string message_from_subject_;
   Subject &subject_;
   static int static_number_;
+  string username;
   int number_;
 };
-
+//string Observer::username;
 int Observer::static_number_ = 0;
 
 void ClientCode() {
+  string response;
+  string unregister;
+  int userNumber;
   Subject *subject = new Subject;
   Observer *observer1 = new Observer(*subject);
+  while(1){
+  cout<< "Do you want to add another user? (y/n)"<<endl;
+  cin>>response;
+  if (response == "y"){
   Observer *observer2 = new Observer(*subject);
-  Observer *observer3 = new Observer(*subject);
-  Observer *observer4;
-  Observer *observer5;
-
+  }
+  else if (response == "n"){
   subject->CreateMessage("Leaderboard has updated.");
-  observer3->RemoveMeFromTheList();
-
-  subject->CreateMessage("A new test has been added to your count.");
-  observer4 = new Observer(*subject);
-
-  observer2->RemoveMeFromTheList();
-  observer5 = new Observer(*subject);
-
-  observer4->RemoveMeFromTheList();
+  break;
+  }
+  else {
+  cout << "invalid" << endl;
+  break;
+  }
+} 
+  while(1){
+  cout << "Would you like to remove a user? (y/n)" << endl;
+  cin >> unregister;
+  if (unregister == "y" || unregister == "yes"){
+  cout << "which user? (enter user number)" << endl;
+  cin >> userNumber;
+  }
+  if (userNumber == 1){
   observer1->RemoveMeFromTheList();
-
-  delete observer2;
   delete observer1;
   delete subject;
+  break;
+  }
+  else if (unregister == "n" || unregister == "no"){
+  delete subject;
+  break;
+  }
+}
 }
 
 int main() {
