@@ -78,6 +78,17 @@ std::string TypingTest::get_accuracy() {
     
 }
 
+std::string TypingTest::get_wpm() {
+    double words = body->get_correct_characters() / 5.0;
+    double time = timer;
+
+    std::string ret = std::to_string(words / (timer / 60.0));
+
+    int dec_index = ret.find(".");
+
+    return ret.substr(0,dec_index + 3);
+}
+
 void TypingTest::display_results(unsigned row, unsigned col) {
     erase();
 
@@ -89,6 +100,7 @@ void TypingTest::display_results(unsigned row, unsigned col) {
         std::vector<std::string> msg = {"You have completed your typing test. Here are your results:",
                                         "",
                                         "Accuracy: " + get_accuracy(),
+                                        get_wpm() + " WPM",
                                         "",
                                         "Press any key to return to menu"};
 

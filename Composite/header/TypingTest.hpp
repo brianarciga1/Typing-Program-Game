@@ -30,7 +30,9 @@ class TypingTest {
         std::string get_accuracy(); 
 
         void set_body(Passage* p) { body = p; }
-        
+
+        std::string get_wpm(); 
+
         void display_results(unsigned row, unsigned col); 
 };
 
