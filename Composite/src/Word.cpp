@@ -18,7 +18,6 @@ unsigned Word::len() {
 
 void Word::display(bool curr, unsigned row, unsigned col) {
     move(row, col);
-    const char* character = 0;
     for(int i = 0; i < this->len(); ++i) {
         if (curr) {
             if (i == 0) {
@@ -28,8 +27,7 @@ void Word::display(bool curr, unsigned row, unsigned col) {
                 attroff(A_STANDOUT);
             } 
         }
-        character = new char(reference.data()[i]);
-        addstr(character);
+        addch(reference.data()[i]);
     }
     
     // const char* first_char = new char(reference.data()[0]);
