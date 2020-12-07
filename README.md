@@ -43,7 +43,7 @@ To build and compile:
   <code>sudo yum install ncurses-devel</code>  
 To run the existing executable, enter the command:  
   <code>./TypingTest</code>  
- > Instructions on installing and running your application
+and follow the instructions. 
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
