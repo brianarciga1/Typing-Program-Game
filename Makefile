@@ -264,35 +264,35 @@ Composite/src/Passage.cpp.s:
 	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/Passage.cpp.s
 .PHONY : Composite/src/Passage.cpp.s
 
-Composite/src/Test.o: Composite/src/Test.cpp.o
+Composite/src/TypingTest.o: Composite/src/TypingTest.cpp.o
 
-.PHONY : Composite/src/Test.o
+.PHONY : Composite/src/TypingTest.o
 
 # target to build an object file
-Composite/src/Test.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/Test.cpp.o
-	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/Test.cpp.o
-.PHONY : Composite/src/Test.cpp.o
+Composite/src/TypingTest.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/TypingTest.cpp.o
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/TypingTest.cpp.o
+.PHONY : Composite/src/TypingTest.cpp.o
 
-Composite/src/Test.i: Composite/src/Test.cpp.i
+Composite/src/TypingTest.i: Composite/src/TypingTest.cpp.i
 
-.PHONY : Composite/src/Test.i
+.PHONY : Composite/src/TypingTest.i
 
 # target to preprocess a source file
-Composite/src/Test.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/Test.cpp.i
-	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/Test.cpp.i
-.PHONY : Composite/src/Test.cpp.i
+Composite/src/TypingTest.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/TypingTest.cpp.i
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/TypingTest.cpp.i
+.PHONY : Composite/src/TypingTest.cpp.i
 
-Composite/src/Test.s: Composite/src/Test.cpp.s
+Composite/src/TypingTest.s: Composite/src/TypingTest.cpp.s
 
-.PHONY : Composite/src/Test.s
+.PHONY : Composite/src/TypingTest.s
 
 # target to generate assembly for a file
-Composite/src/Test.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/Test.cpp.s
-	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/Test.cpp.s
-.PHONY : Composite/src/Test.cpp.s
+Composite/src/TypingTest.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/TypingTest.cpp.s
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/TypingTest.cpp.s
+.PHONY : Composite/src/TypingTest.cpp.s
 
 Composite/src/Word.o: Composite/src/Word.cpp.o
 
@@ -429,9 +429,9 @@ help:
 	@echo "... Composite/src/Passage.o"
 	@echo "... Composite/src/Passage.i"
 	@echo "... Composite/src/Passage.s"
-	@echo "... Composite/src/Test.o"
-	@echo "... Composite/src/Test.i"
-	@echo "... Composite/src/Test.s"
+	@echo "... Composite/src/TypingTest.o"
+	@echo "... Composite/src/TypingTest.i"
+	@echo "... Composite/src/TypingTest.s"
 	@echo "... Composite/src/Word.o"
 	@echo "... Composite/src/Word.i"
 	@echo "... Composite/src/Word.s"
