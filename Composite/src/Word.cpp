@@ -16,6 +16,22 @@ unsigned Word::len() {
     return reference.size();
 }
 
-void Word::display(unsigned row, unsigned col) {
-    mvaddstr(row, col, reference.data());
+void Word::display(bool curr, unsigned row, unsigned col) {
+    move(row, col);
+    const char* character = nullptr;
+    for(int i = 0; i < this->len(); ++i) {
+        if (curr && i == 0) {
+            attron(A_STANDOUT);
+        }
+        character = new char(reference.data()[i]);
+        addstr(character);
+        attroff(A_STANDOUT);
+    }
+    // const char* first_char = new char(reference.data()[0]);
+    // const char* rest = &reference.data()[1];
+    // if(curr) attron(A_STANDOUT);
+    // mvaddstr(row, col, first_char);
+    // if(curr) attroff(A_STANDOUT);
+    // addstr(rest);
+    // attroff(A_STANDOUT);
 }

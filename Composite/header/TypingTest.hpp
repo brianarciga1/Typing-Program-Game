@@ -13,11 +13,11 @@ class TypingTest {
         Passage* body = nullptr;
         int timer;
     public: 
-        void run(int max_row, int max_col);
+        void run(WINDOW* window, int max_row, int max_col);
 
         void get_text(int max_row, int max_col);
 
-        std::string get_user_input(int row, int col, time_t start); 
+        std::string get_user_input(WINDOW* window, int row, int col, time_t start); 
 
         time_t start_timer();
 

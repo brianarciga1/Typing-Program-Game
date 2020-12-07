@@ -34,7 +34,7 @@ class Passage : public Text {
 
         unsigned get_ref_size() {return text.size(); }
 
-        virtual void display(unsigned row, unsigned col); 
+        virtual void display(bool curr, unsigned row, unsigned col); 
 
         double get_accuracy();
 };

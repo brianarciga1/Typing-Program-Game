@@ -22,7 +22,7 @@ class Text {
 
     virtual bool check() = 0;
 
-    virtual void display(unsigned row, unsigned col) = 0;
+    virtual void display(bool curr, unsigned row, unsigned col) = 0;
 };
 
 #endif

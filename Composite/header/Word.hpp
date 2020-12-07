@@ -26,7 +26,7 @@ class Word : public Text {
 
         virtual unsigned len();
 
-        virtual void display(unsigned row, unsigned col);
+        virtual void display(bool curr, unsigned row, unsigned col);
 };
 
 #endif

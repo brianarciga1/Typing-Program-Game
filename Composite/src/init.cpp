@@ -49,7 +49,7 @@ void Initializer::run() {
             case 'p':
                 test->get_text(row, col);
                 erase();
-                test->run(row, col);
+                test->run(stdscr, row, col);
                 test->display_results(row, col);
                 show_menu(row, col);
                 break;

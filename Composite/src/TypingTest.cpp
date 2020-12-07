@@ -1,47 +1,49 @@
 #include "../header/TypingTest.hpp"
 
-void TypingTest::run(int max_row, int max_col) {
+void TypingTest::run(WINDOW* window, int max_row, int max_col) {
     body->set_max_col(3 * max_col / 4);
-    body->display(body->get_row(), body->get_col());
+    body->display(false, body->get_row(), body->get_col());
 
     time_t start = start_timer();
 
     for(unsigned i = body->get_input_size(); i < body->get_ref_size(); ++i) {
-        body->add_word(this->get_user_input(max_row, max_col, start));
-        body->display(body->get_row(), body->get_col());
+        body->add_word(this->get_user_input(window, max_row, max_col, start));
+        body->display(false, body->get_row(), body->get_col());
     }
 }
 
 void TypingTest::get_text(int max_row, int max_col) {
-    std::vector<std::string> ref = {"If", "you", "set", "your", "goals", "ridiculously", "high", "and", "it\'s", "a", "failure,", "you", "will", "fail", "above", "everyone", "else\'s", "success."};
+    std::vector<std::string> ref = {"Iff", "you", "set", "a", "your", "goals"/*, "ridiculously", "high", "and", "it\'s", "a", "failure,", "you", "will", "fail", "above", "everyone", "else\'s", "success."*/};
     Passage* a = new Passage(max_row/3, max_col/4, ref);
     body = a;
 }
 
-std::string TypingTest::get_user_input(int row, int col, time_t start) {
+std::string TypingTest::get_user_input(WINDOW* window, int row, int col, time_t start) {
     int ch;
     std::string ret = "";
     for(;;){
+        mvaddstr(5 * (row-1) / 6, col/2, ret.c_str());
         update_timer(start);
         display_timer(timer, row, col);
         display_accuracy(col);
         ch = getch();
-        mvaddstr(5 * (row-1) / 6, (col-ret.size())/2, ret.c_str());
         if (ch >= 33 && ch <= 126) {
             ret += static_cast<char>(ch);
         }
         switch(ch) {
             case ' ':
-            {
+            {   
                 move(5 * (row-1) / 6, 0);
                 clrtoeol();
                 return ret;
             }
             case KEY_BACKSPACE:
             {   
+                int x, y;
+                getyx(window, y, x);
                 move(5 * (row-1)/6, 0);
                 clrtoeol();
-                ret = "";
+                if(ret.size() > 0) ret.pop_back();
             }
         }
     
