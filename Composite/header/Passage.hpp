@@ -22,6 +22,8 @@ class Passage : public Text {
         
         virtual unsigned len();
 
+        unsigned get_correct_characters();
+
         virtual bool check();
 
         void set_max_col(unsigned i) { max_col = i; }
@@ -34,7 +36,7 @@ class Passage : public Text {
 
         virtual void display(unsigned row, unsigned col); 
 
-
+        double get_accuracy();
 };
 
 #endif

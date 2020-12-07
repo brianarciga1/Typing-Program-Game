@@ -19,6 +19,17 @@ unsigned Passage::len() {
     return x;
 }
 
+unsigned Passage::get_correct_characters() {
+    unsigned x = 0;
+
+    for(int i = 0; i < text.size(); ++i) {
+        if (text.at(i)->check()) {
+            x += text.at(i)->len(); 
+        }
+    }
+    return x;
+}
+
 void Passage::add_word(std::string input) {
     text.at(curr_word)->set_word(input);
     curr_word++;
@@ -61,4 +72,9 @@ void Passage::display(unsigned row, unsigned col) {
         curr_col += text.at(i)->len() + 1;
     }
 
+}
+
+double Passage::get_accuracy() {
+    if(this->len() == 0) { return 0; } 
+    return this->get_correct_characters() / static_cast<double>(this->len());
 }
