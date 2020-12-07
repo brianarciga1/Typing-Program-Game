@@ -1,42 +1,35 @@
-#ifndef __OBSERVER_HPP__
-#define __OBSERVER_HPP__
-
 #include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <cmath>
 #include <list>
 #include <string>
+#include "i_subject.hpp"
+#include "i_observer.hpp"
+#include "observer_obs.hpp"
+#include "subject_obs.hpp"
 
 using namespace std;
-
-class IObserver {
- public:
-  virtual ~IObserver(){};
-  virtual void Update(const string &message_from_subject) = 0;
-};
-
-class ISubject {
- public:
-  virtual ~ISubject(){};
-  virtual void Attach(IObserver *observer) = 0;
-  virtual void Detach(IObserver *observer) = 0;
-  virtual void Notify() = 0;
-};
-
-class Subject : public ISubject {
- public:
-  virtual ~Subject() {
+//iobs
+ virtual ~IObserver(){};
+ virtual void IObserver::Update(const string &message_from_subject) = 0;
+//isub
+ virtual ~ISubject(){};
+ virtual void ISubject:: Attach(IObserver *observer) = 0;
+ virtual void ISubject::Detach(IObserver *observer) = 0;
+ virtual void ISubject::Notify() = 0;
+//sub
+ virtual ~Subject() {
     cout << "Goodbye, I was the Subject.\n";
   }
 
-  void Attach(IObserver *observer) override {
+ void Subject::Attach(IObserver *observer) override {
     list_observer_.push_back(observer);
   }
-  void Detach(IObserver *observer) override {
+ void Subject::Detach(IObserver *observer) override {
     list_observer_.remove(observer);
   }
-  void Notify() override {
+ void Subject::Notify() override {
     list<IObserver *>::iterator iterator = list_observer_.begin();
     HowManyObserver();
     while (iterator != list_observer_.end()) {
@@ -44,52 +37,38 @@ class Subject : public ISubject {
       ++iterator;
     }
   }
-
-  void CreateMessage(string message = "Empty") {
+ void Subject::CreateMessage(string message = "Empty") {
     this->message_ = message;
     Notify();
   }
-  void HowManyObserver() {
+ void Subject::HowManyObserver() {
     std::cout << "There are " << list_observer_.size() << " registered users.\n";
   }
 
- private:
-  list<IObserver *> list_observer_;
-  string message_;
-};
-
-class Observer : public IObserver {
- public:
-  Observer(Subject &subject) : subject_(subject) {
+//obs
+ Observer::Observer(Subject &subject) : subject_(subject) {
     this->subject_.Attach(this);
     cout << "Hello, User \"" << ++Observer::static_number_ << "\".\n";
     this->number_ = Observer::static_number_;
   }
-  virtual ~Observer() {
+ virtual ~Observer() {
     cout << "Goodbye, User \"" << this->number_ << "\".\n";
   }
 
-  void Update(const std::string &message_from_subject) override {
+ void Observer::Update(const std::string &message_from_subject) override {
     message_from_subject_ = message_from_subject;
     PrintInfo();
   }
-  void RemoveMeFromTheList() {
+ void Observer::RemoveMeFromTheList() {
     subject_.Detach(this);
     cout << "User \"" << number_ << "\" has unregistered.\n";
   }
-  void PrintInfo() {
+ void Observer::PrintInfo() {
     cout << "User \"" << this->number_ << "\": you have a new message --> " << this->message_from_subject_ << "\n";
   }
-
- private:
-  string message_from_subject_;
-  Subject &subject_;
-  static int static_number_;
-  int number_;
-};
-
-int Observer::static_number_ = 0;
-
+//obs
+//int Observer::static_number_ = 0;
+int static_number_=0;
 void ClientCode() {
   Subject *subject = new Subject;
   Observer *observer1 = new Observer(*subject);
@@ -120,4 +99,3 @@ int main() {
   return 0;
 }
 
-#endif
