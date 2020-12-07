@@ -2,7 +2,7 @@
 #define __INIT_HPP__
 
 #include "ncurses.h"
-#include "Test.hpp"
+#include "TypingTest.hpp"
 
 class Initializer {
     public: 

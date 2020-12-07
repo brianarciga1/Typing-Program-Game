@@ -6,7 +6,7 @@
 #include <iostream>
 
 void Initializer::run() {
-    Test* test = new Test();
+    TypingTest* test = new TypingTest();
     initscr();
     int row, col, ch;
 
