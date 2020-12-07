@@ -60,3 +60,12 @@ void Test::update_timer(time_t start) {
 void Test::display_timer(int time, int max_row, int max_col) {
     mvaddstr(0, max_col/2, std::to_string(time).c_str());
 }
+
+std::string Test::get_accuracy() {
+    std::string not_truncated = std::to_string(body->get_accuracy());
+
+    int dec_index = not_truncated.find(".");
+
+    return not_truncated.substr(0, dec_index + 2);
+    
+}

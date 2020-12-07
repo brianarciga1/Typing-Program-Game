@@ -24,6 +24,8 @@ class Test {
         void update_timer(time_t start);
 
         void display_timer(int time, int max_row, int max_col);
+
+        std::string get_accuracy(); 
 };
 
 
