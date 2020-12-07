@@ -5,6 +5,7 @@
 #include "../Composite/header/Passage.hpp"
 #include "../Composite/header/Word.hpp"
 #include "../Composite/header/Text.hpp"
+#include "../Composite/header/TypingTest.hpp"
 
 
 /* -------------------- TESTING WORD CLASS -------------------- */
@@ -409,5 +410,91 @@ TEST(CompositePassageCheck, CompleteIncorrect) {
     EXPECT_FALSE(a->check());
     
 } 
+
+
+/* -------------------- TESTING TEST CLASS -------------------- */
+
+/* ---------- TESTING Test::get_accuracy() ----------- */
+
+TEST(CompositeTestGetAccuracy, Empty){
+    TypingTest* a = new TypingTest();
+    
+    std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
+
+    Passage* b = new Passage(0, 0, ref);
+
+    a->set_body(b);
+
+    EXPECT_EQ(a->get_accuracy(), "0.00%");
+}
+
+TEST(CompositeTestGetAccuracy, Fifty){
+    TypingTest* a = new TypingTest();
+    
+    std::vector<std::string> ref = {"Hi", "by"};
+
+    Passage* b = new Passage(0, 0, ref);
+    
+    b->add_word("Hi");
+    b->add_word("B");
+
+    a->set_body(b);
+
+    EXPECT_EQ(a->get_accuracy(), "50.00%");
+}
+
+TEST(CompositeTestGetAccuracy, RoundUp){
+    TypingTest* a = new TypingTest();
+    
+    std::vector<std::string> ref = {"Hi", "by", "pi"};
+
+    Passage* b = new Passage(0, 0, ref);
+    
+    b->add_word("Hi");
+    b->add_word("B");
+    b->add_word("pi");
+
+    a->set_body(b);
+
+    EXPECT_EQ(a->get_accuracy(), "66.66%");
+}
+
+TEST(CompositeTestGetAccuracy, RoundDown){
+    TypingTest* a = new TypingTest();
+    
+    std::vector<std::string> ref = {"Hi", "by", "pi"};
+
+    Passage* b = new Passage(0, 0, ref);
+    
+    b->add_word("Hi");
+    b->add_word("B");
+    b->add_word("Pi");
+
+    a->set_body(b);
+
+    EXPECT_EQ(a->get_accuracy(), "33.33%");
+}
+
+TEST(CompositeTestGetAccuracy, Perfect){
+    TypingTest* a = new TypingTest();
+    
+    std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
+
+    Passage* b = new Passage(0, 0, ref);
+
+    b->add_word("The");
+    b->add_word("quick");    
+    b->add_word("brown");    
+    b->add_word("fox");    
+    b->add_word("jumps");
+    b->add_word("over");
+    b->add_word("the");
+    b->add_word("lazy");
+    b->add_word("dog.");
+
+    a->set_body(b);
+
+    EXPECT_EQ(a->get_accuracy(), "100.00%");
+}
 
 #endif 
