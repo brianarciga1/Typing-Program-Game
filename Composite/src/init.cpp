@@ -46,19 +46,11 @@ void Initializer::run() {
                 endwin();
                 break;
             }
-            case 'e':
-            {
-                erase();
-                std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
-                Passage* a = new Passage(row/3, col/4, ref);
-                a->set_max_col(3 * col / 4);
-                a->display(a->get_row(), a->get_col());
-                break;  
-            }
             case 'p':
                 test->get_text(row, col);
                 erase();
                 test->run(row, col);
+                show_menu(row, col);
                 break;
             case ' ':
             {
@@ -70,7 +62,11 @@ void Initializer::run() {
             }
             case 's': 
             {
-                printw(a.c_str());
+                erase();
+                attron(A_STANDOUT);
+                printw("Settings is not yet implemented. Press escape to continue.");
+                attroff(A_STANDOUT);
+                endwin();
                 break;
             }
             case 'q':
@@ -84,6 +80,7 @@ void Initializer::run() {
 
 
 void Initializer::show_menu(int row, int col) {
+    erase();
     mvprintw(0, 0, "TODO: Get info from Observer class");
 
     char settings_message[] = "TODO: Implement settings";
