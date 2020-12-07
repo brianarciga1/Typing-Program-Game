@@ -27,14 +27,10 @@ void Initializer::run() {
 
     show_menu(row, col);
 
-    std::string a = "asdf";
     // menu loop
     for(;;) {
         // get user input
         ch = getch();
-        if(ch > 0) {
-            a += static_cast<char>(ch);
-        }
         // a += character;
         switch(ch) {
             case 'l':
@@ -49,18 +45,10 @@ void Initializer::run() {
             case 'p':
                 test->get_text(row, col);
                 erase();
-                test->run(stdscr, row, col);
+                test->run(row, col);
                 test->display_results(row, col);
                 show_menu(row, col);
                 break;
-            case ' ':
-            {
-                mvaddstr(0, 0, a.c_str());
-                move(row - 1,0);
-                clrtoeol();
-                move(row-1, col/2);
-                break;
-            }
             case 's': 
             {
                 erase();

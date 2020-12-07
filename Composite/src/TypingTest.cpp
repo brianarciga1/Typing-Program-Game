@@ -1,13 +1,13 @@
 #include "../header/TypingTest.hpp"
 
-void TypingTest::run(WINDOW* window, int max_row, int max_col) {
+void TypingTest::run(int max_row, int max_col) {
     body->set_max_col(3 * max_col / 4);
     body->display(false, body->get_row(), body->get_col());
 
     time_t start = start_timer();
 
     for(unsigned i = body->get_input_size(); i < body->get_ref_size(); ++i) {
-        body->add_word(this->get_user_input(window, max_row, max_col, start));
+        body->add_word(this->get_user_input(max_row, max_col, start));
         body->display(false, body->get_row(), body->get_col());
     }
 }
@@ -18,15 +18,17 @@ void TypingTest::get_text(int max_row, int max_col) {
     body = a;
 }
 
-std::string TypingTest::get_user_input(WINDOW* window, int row, int col, time_t start) {
+std::string TypingTest::get_user_input(int row, int col, time_t start) {
     int ch;
     std::string ret = "";
+    ch = getch();
     for(;;){
+        attron(A_STANDOUT);
         mvaddstr(5 * (row-1) / 6, col/2, ret.c_str());
+        attroff(A_STANDOUT);
         update_timer(start);
         display_timer(timer, row, col);
         display_accuracy(col);
-        ch = getch();
         if (ch >= 33 && ch <= 126) {
             ret += static_cast<char>(ch);
         }
@@ -39,15 +41,14 @@ std::string TypingTest::get_user_input(WINDOW* window, int row, int col, time_t 
             }
             case KEY_BACKSPACE:
             {   
-                int x, y;
-                getyx(window, y, x);
                 move(5 * (row-1)/6, 0);
                 clrtoeol();
                 if(ret.size() > 0) ret.pop_back();
             }
         }
-    
+        ch = getch();
     }
+    attroff(A_STANDOUT);
 }
 
 time_t TypingTest::start_timer() { 
@@ -68,7 +69,7 @@ void TypingTest::display_timer(int time, int max_row, int max_col) {
 
 void TypingTest::display_accuracy(int max_col) {
     std::string accuracy = this->get_accuracy();
-    mvaddstr(0, (max_col-accuracy.size())/2, this->get_accuracy().c_str());
+    mvaddstr(0, (max_col-accuracy.size())/2+1, this->get_accuracy().c_str());
 }
 
 std::string TypingTest::get_accuracy() {
