@@ -25,9 +25,13 @@ class TypingTest {
 
         void display_timer(int time, int max_row, int max_col);
 
+        void display_accuracy(int max_col);
+
         std::string get_accuracy(); 
 
         void set_body(Passage* p) { body = p; }
+        
+        void display_results(unsigned row, unsigned col); 
 };
 
 

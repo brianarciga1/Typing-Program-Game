@@ -50,6 +50,7 @@ void Initializer::run() {
                 test->get_text(row, col);
                 erase();
                 test->run(row, col);
+                test->display_results(row, col);
                 show_menu(row, col);
                 break;
             case ' ':

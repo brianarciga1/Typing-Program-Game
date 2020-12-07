@@ -24,6 +24,7 @@ std::string TypingTest::get_user_input(int row, int col, time_t start) {
     for(;;){
         update_timer(start);
         display_timer(timer, row, col);
+        display_accuracy(col);
         ch = getch();
         mvaddstr(5 * (row-1) / 6, (col-ret.size())/2, ret.c_str());
         if (ch >= 33 && ch <= 126) {
@@ -37,8 +38,10 @@ std::string TypingTest::get_user_input(int row, int col, time_t start) {
                 return ret;
             }
             case KEY_BACKSPACE:
-            {
-                ret.pop_back();
+            {   
+                move(5 * (row-1)/6, 0);
+                clrtoeol();
+                ret = "";
             }
         }
     
@@ -58,7 +61,12 @@ void TypingTest::update_timer(time_t start) {
 }
 
 void TypingTest::display_timer(int time, int max_row, int max_col) {
-    mvaddstr(0, max_col/2, std::to_string(time).c_str());
+    mvaddstr(max_row/4, max_col/2, std::to_string(time).c_str());
+}
+
+void TypingTest::display_accuracy(int max_col) {
+    std::string accuracy = this->get_accuracy();
+    mvaddstr(0, (max_col-accuracy.size())/2, this->get_accuracy().c_str());
 }
 
 std::string TypingTest::get_accuracy() {
@@ -69,3 +77,23 @@ std::string TypingTest::get_accuracy() {
     return not_truncated.substr(0, dec_index + 3) + "%";
     
 }
+
+void TypingTest::display_results(unsigned row, unsigned col) {
+    erase();
+
+    int ch = 0;
+    
+    for (;;) {
+        ch = getch();
+        if (ch != -1) { return; }
+        std::vector<std::string> msg = {"You have completed your typing test. Here are your results:",
+                                        "",
+                                        "Accuracy: " + get_accuracy(),
+                                        "",
+                                        "Press any key to return to menu"};
+
+        for(unsigned i = 0; i < msg.size(); ++i) {
+            mvaddstr(row/3+i, (col-msg.at(i).size())/2, msg.at(i).c_str());
+        }
+    }
+}   
