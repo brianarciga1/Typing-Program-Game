@@ -224,6 +224,112 @@ TEST(CompositePassageLen, OneLongWord) {
     
 } 
 
+/* ---------- TESTING PASSAGE::GET_CORRECT_CHARACTERS -------- */
+
+TEST(CompositePassageCorrect, OneEmpty) {
+    std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
+
+    Passage* a = new Passage(0, 0, ref);
+
+    EXPECT_EQ(a->get_correct_characters(), 0);
+}
+
+TEST(CompositePassageCorrect, OneCorrect) {
+    std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
+
+    Passage* a = new Passage(0, 0, ref);
+
+    a->add_word("The");
+
+    EXPECT_EQ(a->get_correct_characters(), 3);
+}
+
+TEST(CompositePassageCorrect, TooLong) {
+    std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
+
+    Passage* a = new Passage(0, 0, ref);
+
+    a->add_word("The");
+    a->add_word("quickk");
+
+    EXPECT_EQ(a->get_correct_characters(), 3);
+}
+
+TEST(CompositePassageCorrect, TooShort) {
+    std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
+
+    Passage* a = new Passage(0, 0, ref);
+
+    a->add_word("The");
+    a->add_word("quic");
+
+    EXPECT_EQ(a->get_correct_characters(), 3);
+}
+
+TEST(CompositePassageCorrect, BeforeEmpty) {
+    std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
+
+    Passage* a = new Passage(0, 0, ref);
+
+    a->add_word("");
+    a->add_word("quick");
+
+    EXPECT_EQ(a->get_correct_characters(), 5);
+}
+
+TEST(CompositePassageCorrect, BeforeIncorrect) {
+    std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
+
+    Passage* a = new Passage(0, 0, ref);
+
+    a->add_word("teh");
+    a->add_word("quick");
+
+    EXPECT_EQ(a->get_correct_characters(), 5);
+}
+
+TEST(CompositePassageCorrect, MiddleIncorrect) {
+    std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
+
+    Passage* a = new Passage(0, 0, ref);
+
+    a->add_word("The");
+    a->add_word("qucik");
+    a->add_word("brown");
+
+    EXPECT_EQ(a->get_correct_characters(), 8);
+}
+
+TEST(CompositePassageCorrect, SmallAllCorrect) {
+    std::vector<std::string> ref = {"The", "quick", "brown"};
+
+    Passage* a = new Passage(0, 0, ref);
+
+    a->add_word("The");
+    a->add_word("quick");
+    a->add_word("brown");
+
+    EXPECT_EQ(a->get_correct_characters(), 13);
+}
+
+TEST(CompositePassageCorrect, LargeAllCorrect) {
+    std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
+
+    Passage* a = new Passage(0, 0, ref);
+
+    a->add_word("The");
+    a->add_word("quick");    
+    a->add_word("brown");    
+    a->add_word("fox");    
+    a->add_word("jumps");
+    a->add_word("over");
+    a->add_word("the");
+    a->add_word("lazy");
+    a->add_word("dog.");
+
+    EXPECT_EQ(a->get_correct_characters(), 36);
+}
+
 /* ---------- TESTING PASSAGE::CHECK() ---------- */
 
 TEST(CompositePassageCheck, Empty) {
