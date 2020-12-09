@@ -35,11 +35,8 @@ void Initializer::run() {
         switch(ch) {
             case 'l':
             {
-                erase();
-                attron(A_STANDOUT);
-                printw("Login is not yet implemented. Press escape to continue.");
-                attroff(A_STANDOUT);
-                endwin();
+                show_login(row, col);
+                show_menu(row, col);
                 break;
             }
             case 'p':
@@ -86,6 +83,19 @@ void Initializer::show_settings(int row, int col) {
     erase();
     attron(A_STANDOUT);
     printw("Settings is not yet implemented. Press any key to continue.");
+    attroff(A_STANDOUT);
+
+    int ch = getch();
+
+    while(ch < 1) {
+        ch = getch();
+    }
+}
+
+void Initializer::show_login(int row, int col) {
+    erase();
+    attron(A_STANDOUT);
+    printw("Login is not yet implemented. Press any key to continue.");
     attroff(A_STANDOUT);
 
     int ch = getch();

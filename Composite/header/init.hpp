@@ -10,6 +10,7 @@ class Initializer {
     private:
         void show_menu(int row, int col);
         void show_settings(int row, int col); 
+        void show_login(int row, int col);
 
 };
 
