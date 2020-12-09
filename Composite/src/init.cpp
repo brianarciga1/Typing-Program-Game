@@ -51,11 +51,8 @@ void Initializer::run() {
                 break;
             case 's': 
             {
-                erase();
-                attron(A_STANDOUT);
-                printw("Settings is not yet implemented. Press escape to continue.");
-                attroff(A_STANDOUT);
-                endwin();
+                show_settings(row, col);
+                show_menu(row, col);
                 break;
             }
             case 'q':
@@ -82,5 +79,18 @@ void Initializer::show_menu(int row, int col) {
     welcome.push_back("Created by Brian Arciga, Danin Namiranian, and Scott Vo");
     for (unsigned i = 0; i < welcome.size(); ++i) {
         mvprintw(row/3 + i, (col-welcome.at(i).size())/2, welcome.at(i).c_str());
+    }
+}
+
+void Initializer::show_settings(int row, int col) {
+    erase();
+    attron(A_STANDOUT);
+    printw("Settings is not yet implemented. Press any key to continue.");
+    attroff(A_STANDOUT);
+
+    int ch = getch();
+
+    while(ch < 1) {
+        ch = getch();
     }
 }
