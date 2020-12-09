@@ -12,6 +12,7 @@ class TypingTest {
     private: 
         Passage* body = nullptr;
         int timer;
+        bool running = true;
     public: 
         void run(int max_row, int max_col);
 

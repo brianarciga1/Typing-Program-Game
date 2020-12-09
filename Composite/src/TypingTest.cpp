@@ -1,6 +1,7 @@
 #include "../header/TypingTest.hpp"
 
 void TypingTest::run(int max_row, int max_col) {
+
     body->set_max_col(3 * max_col / 4);
     body->display(false, body->get_row(), body->get_col());
 
@@ -8,6 +9,10 @@ void TypingTest::run(int max_row, int max_col) {
 
     for(unsigned i = body->get_input_size(); i < body->get_ref_size(); ++i) {
         body->add_word(this->get_user_input(max_row, max_col, start));
+        if(!running) {
+            erase();
+            return;
+        }
         body->display(false, body->get_row(), body->get_col());
     }
 }
@@ -44,6 +49,11 @@ std::string TypingTest::get_user_input(int row, int col, time_t start) {
                 move(5 * (row-1)/6, 0);
                 clrtoeol();
                 if(ret.size() > 0) ret.pop_back();
+            }
+            case 27:
+            {
+                running = false;
+                return "";
             }
         }
         ch = getch();
