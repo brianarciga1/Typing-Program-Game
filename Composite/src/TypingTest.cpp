@@ -3,6 +3,7 @@
 void TypingTest::run(int max_row, int max_col) {
 
     body->set_max_col(3 * max_col / 4);
+    mvaddstr(body->get_row()-1, body->get_col(), "Press ESC to quit test");
     body->display(false, body->get_row(), body->get_col());
 
     time_t start = start_timer();
@@ -59,6 +60,7 @@ std::string TypingTest::get_user_input(int row, int col, time_t start) {
         ch = getch();
     }
     attroff(A_STANDOUT);
+    return "";
 }
 
 time_t TypingTest::start_timer() { 
