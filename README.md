@@ -4,15 +4,16 @@ Authors: [Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://git
 
 ## Project Description
 * Typing is an essential skill in today's technology-based society, especially to people who type for a living. The first thing that comes to mind with the thought of "professional typist" is programming. As a programmer, be it in C++ or SQL, typing is the most important interface between a programmer and their computer. Typing efficiency is important to programmers because they need to be efficient in writing code, and finding the where each letter is on a keyboard should be the least of their worries. 
-  * There will be choices of quotes pulled from the internet, random strings of words, and we are looking to add code snippets as well if we can do it in time.
+  * There will be choices of text in the form of a set of random words, or a paragraph or quote. The test material will be pulled from a local database. 
   * Typing tests will be timed, with choices of time limits, such as 30 seconds, 1 minute, or two minutes. 
-* We are considering using [ncurses](https://pubs.opengroup.org/onlinepubs/7908799/xcurses/curses.h.html) be our main user interface by detecting keypresses. 
+* We are using [ncurses](https://pubs.opengroup.org/onlinepubs/7908799/xcurses/curses.h.html) be our main user interface by detecting keypresses. 
 * The input will be the keypresses of the user. The output will be the words that the user types, in colors depending on the correctness of the user's input. 
 * We intend to use the Composite, Observer and Strategy design patterns for the project. 
-  * Composite will be useful to manage the multiple components that will be a part of the program window, such as the typing box, text prompt, and timer. 
-    * A Canvas object that inherits a Graphic object would be the main part of the window, and the other components would lie on it.
-    * Then, a something like a Textbox object would be overlayed onto the Canvas to create an interface for the user to type the words that show up on the screen.
-    * Each Graphic object that contains text in the form of a string will have member functions that will allow the text and its background change color, for example when a user gets a correct or incorrect spelling of a word.
+  * Composite will be useful to manage the multiple components that will be a part of the test, such as the text material window, timer, and key input. 
+    * An Initializer object will be the main running loop of the program. It will instantiate Typing Tests with settings based on what the user has set beforehand. 
+    * Text classes will handle the storage of test material and validating user inputs when compared to the material. 
+    * UserList will hold a vector of Users to interface with the Observer class.
+    * TypingTest will use the classes from the Strategy pattern to retrieve passages for the user to type.
   * Strategy pattern will be used to read and display typing material. 
     * There will be at least 3 main strategies, creating typing material with:
       1. Quotes
