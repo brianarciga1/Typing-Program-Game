@@ -6,7 +6,7 @@ Authors: [Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://git
 * Typing is an essential skill in today's technology-based society, especially to people who type for a living. The first thing that comes to mind with the thought of "professional typist" is programming. As a programmer, be it in C++ or SQL, typing is the most important interface between a programmer and their computer. Typing efficiency is important to programmers because they need to be efficient in writing code, and finding the where each letter is on a keyboard should be the least of their worries. 
   * There will be choices of quotes pulled from the internet, random strings of words, and we are looking to add code snippets as well if we can do it in time.
   * Typing tests will be timed, with choices of time limits, such as 30 seconds, 1 minute, or two minutes. 
-* We are considering using [windows.h](https://docs.microsoft.com/en-us/windows/win32/learnwin32/learn-to-program-for-windows) to do our window managing and keypress detection. 
+* We are considering using [ncurses](https://pubs.opengroup.org/onlinepubs/7908799/xcurses/curses.h.html) be our main user interface by detecting keypresses. 
 * The input will be the keypresses of the user. The output will be the words that the user types, in colors depending on the correctness of the user's input. 
 * We intend to use the Composite, Observer and Strategy design patterns for the project. 
   * Composite will be useful to manage the multiple components that will be a part of the program window, such as the typing box, text prompt, and timer. 
