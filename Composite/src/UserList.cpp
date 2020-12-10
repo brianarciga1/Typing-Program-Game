@@ -53,6 +53,9 @@ void UserList::login(int row, int col) {
                     return;
                 }
             }
+            case 27 : {
+                return;
+            }
             default : 
             {
                 continue;
@@ -60,10 +63,6 @@ void UserList::login(int row, int col) {
         }
     }
     erase();
-}
-
-void UserList::display_user_info(int row, int col, int index) {
-
 }
 
 std::string UserList::get_user_input(int row, int col) {

@@ -5,6 +5,7 @@
 #include "Passage.hpp"
 #include "Text.hpp"
 #include "Word.hpp"
+#include "../../Strategy/TextGenerator/TextGenerator.hpp"
 #include <ctime>
 #include <string>
 
@@ -13,6 +14,7 @@ class TypingTest {
         Passage* body = nullptr;
         int timer;
         bool running = true;
+        TextGenerator* text_gen = new WordSetGenerator(new Language_English());
     public: 
         void run(int max_row, int max_col);
 
@@ -35,6 +37,8 @@ class TypingTest {
         std::string get_wpm(); 
 
         void display_results(unsigned row, unsigned col); 
+
+        void set_text_gen(TextGenerator* input);
 };
 
 
