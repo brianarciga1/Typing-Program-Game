@@ -10,6 +10,10 @@ ADD_EXECUTABLE(TypingTest
     Composite/src/Word.cpp
     Composite/src/Passage.cpp
     Composite/src/TypingTest.cpp
+    Observer/src/Observer.cpp
+    Observer/src/Subject.cpp
+    Observer/src/unit_test.cpp
+    
 )
 
 ADD_EXECUTABLE(test
@@ -18,6 +22,9 @@ ADD_EXECUTABLE(test
     Composite/src/Word.cpp
     Composite/src/Passage.cpp
     Composite/src/TypingTest.cpp
+    Observer/src/Observer.cpp
+    Observer/src/Subject.cpp
+    Observer/src/unit_test.cpp
 )
 
 TARGET_LINK_LIBRARIES(test ncurses)
