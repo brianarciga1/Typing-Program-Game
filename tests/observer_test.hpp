@@ -2,10 +2,10 @@
 #define __OBSERVER_TEST_HPP__
 
 #include "gtest/gtest.h"
-#include "IObserver.hpp"
-#include "Observer.hpp"
-#include "ISubject.hpp"
-#include "Subject.hpp"
+#include "../Observer/header/IObserver.hpp"
+#include "../Observer/header/Observer.hpp"
+#include "../Observer/header/ISubject.hpp"
+#include "../Observer/header/Subject.hpp"
 
 TEST(IObserver, AddUser) {
 	Subject *subject = new Subject();
