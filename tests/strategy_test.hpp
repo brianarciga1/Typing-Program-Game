@@ -32,7 +32,7 @@ TEST(STG_Test_DataBase, getDataBaseSuccess) {
     
     DataBase        DB;
     vector<string>  V;
-    V = DB.get_dataBase("Strategy/TextGenerator/DataBase/TextGenerator_Quate_English.txt");
+    V = DB.get_dataBase("Strategy/TextGenerator/DataBase/TextGenerator_Quote_English.txt");
 
     EXPECT_TRUE(V[0] == "Get busy living or get busy dying. Stephen King");
     EXPECT_TRUE(V[39] == "Only the paranoid survive. Andy Grove, former CEO of Intel");
@@ -109,16 +109,16 @@ TEST(STG_Test_ParagraphGenerator, size2) {
 }
 
 // ------------------------------------
-// ----- [ Test - QuateGenerator() ] --
+// ----- [ Test - QuoteGenerator() ] --
 // ------------------------------------
 
          // ----- [ generate() ]
 
-TEST(STG_Test_QuateGenerator, normalIndex0) {
+TEST(STG_Test_QuoteGenerator, normalIndex0) {
 
     vector<string> V;
     string text;
-    TextGenerator* Q = new QuateGenerator( new Language_English() );
+    TextGenerator* Q = new QuoteGenerator( new Language_English() );
 
     V = Q->generate(0);
 
@@ -131,11 +131,11 @@ TEST(STG_Test_QuateGenerator, normalIndex0) {
     EXPECT_TRUE(text == "Get busy living or get busy dying. Stephen King ");
 }
 
-TEST(STG_Test_QuateGenerator, normalIndex1) {
+TEST(STG_Test_QuoteGenerator, normalIndex1) {
 
     vector<string> V;
     string text;
-    TextGenerator* Q = new QuateGenerator( new Language_English() );
+    TextGenerator* Q = new QuoteGenerator( new Language_English() );
 
     V = Q->generate(10);
 
@@ -148,11 +148,11 @@ TEST(STG_Test_QuateGenerator, normalIndex1) {
     EXPECT_TRUE(text == "When you reach the end of your rope, tie a knot in it and hang on. Franklin D. Roosevelt ");
 }
 
-TEST(STG_Test_QuateGenerator, normalIndex2) {
+TEST(STG_Test_QuoteGenerator, normalIndex2) {
 
     vector<string> V;
     string text;
-    TextGenerator* Q = new QuateGenerator( new Language_English() );
+    TextGenerator* Q = new QuoteGenerator( new Language_English() );
 
     V = Q->generate(39);
 
@@ -165,39 +165,39 @@ TEST(STG_Test_QuateGenerator, normalIndex2) {
     EXPECT_TRUE(text == "Only the paranoid survive. Andy Grove, former CEO of Intel ");
 }
 
-TEST(STG_Test_QuateGenerator, outIndex0) {
+TEST(STG_Test_QuoteGenerator, outIndex0) {
 
-    TextGenerator* Q = new QuateGenerator( new Language_English() );
+    TextGenerator* Q = new QuoteGenerator( new Language_English() );
 
     EXPECT_EXIT(Q->generate(-1);, ::testing::ExitedWithCode(1),"");
 }
 
-TEST(STG_Test_QuateGenerator, outIndex1) {
+TEST(STG_Test_QuoteGenerator, outIndex1) {
 
-    TextGenerator* Q = new QuateGenerator( new Language_English() );
+    TextGenerator* Q = new QuoteGenerator( new Language_English() );
 
     EXPECT_EXIT(Q->generate(40);, ::testing::ExitedWithCode(1),"");
 }
 
-TEST(STG_Test_QuateGenerator, outIndex2) {
+TEST(STG_Test_QuoteGenerator, outIndex2) {
 
-    TextGenerator* Q = new QuateGenerator( new Language_English() );
+    TextGenerator* Q = new QuoteGenerator( new Language_English() );
 
     EXPECT_EXIT(Q->generate(10000);, ::testing::ExitedWithCode(1),"");
 }
 
         // ----- [ size() ]
 
-TEST(STG_Test_QuateGenerator, size1) {
+TEST(STG_Test_QuoteGenerator, size1) {
 
-    TextGenerator* Q = new QuateGenerator( new Language_English() );
+    TextGenerator* Q = new QuoteGenerator( new Language_English() );
     EXPECT_FLOAT_EQ(Q->size(), 40);
 }
 
-TEST(STG_Test_QuateGenerator, size2) {
+TEST(STG_Test_QuoteGenerator, size2) {
 
     vector<string> V;
-    TextGenerator* Q = new QuateGenerator( new Language_English() );
+    TextGenerator* Q = new QuoteGenerator( new Language_English() );
 
     V = Q->generate(0);
 

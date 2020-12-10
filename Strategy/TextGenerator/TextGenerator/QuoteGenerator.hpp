@@ -3,16 +3,16 @@
 using namespace std;
 
 
-class QuateGenerator : public TextGenerator {
+class QuoteGenerator : public TextGenerator {
 
 public:
 
-// ----- [ QuateGenerator constructor ]
+// ----- [ QuoteGenerator constructor ]
 // -------------------------------------------------------------------------
 // ----- [ convert DataBase ( text version ) to DataBase( vector Version ) ]
 // ----- [ we use Data Base Vector Version from now ]
-	QuateGenerator(Language* L) {
-		_dataBase_Vector = _dataBase_Text.get_dataBase( "Strategy/TextGenerator/DataBase/TextGenerator_Quate_" +  L->get_language() + ".txt" );
+	QuoteGenerator(Language* L) {
+		_dataBase_Vector = _dataBase_Text.get_dataBase( "Strategy/TextGenerator/DataBase/TextGenerator_Quote_" +  L->get_language() + ".txt" );
 	}
 
 // ----- [ generate() ]
