@@ -12,35 +12,49 @@ class DataBase
 
 private:
 
-	ifstream			DB;
-	vector<string>		v_DB;
+	ifstream			dataBase_Text;
+	vector<string>		dataBase_Vector;
 
 public:
 
-	// .get_dataBase()
-	// -------------------------------------------
-	// get Data from DATABASE[TextType] and return a VECTOR of values
-	// -------------------------------------------
-	// 	 [#1] it open the DataBase[TextFileVersion] & turn it into DataBase[C++Version: Vectortype]
-	//	 [#2] return the DATABASE[VectorVersion]
-	// -------------------------------------------
+// ----- [ get_dataBase() ]
+// -------------------------------------------------------------------------
+// ----- [ it open the dataBase(Text Version) and convert it to (Vector Version) ]
+// ----- [ first it makes sure that dataBase can be open, if not exit(2) ]
+// ----- [ else return the vector ]
 	vector<string>  get_dataBase(string address) {
 
-		string				output;
-
-		// [#1]
-		DB.open(address);
-
-		while (!DB.eof())
+		try
 		{
-			getline(DB, output);
-			v_DB.push_back(output);
+			dataBase_Text.open(address);
+
+			if(dataBase_Text.is_open())
+			{
+				string				data;
+
+				while (!dataBase_Text.eof())
+				{
+					getline(dataBase_Text, data);
+					dataBase_Vector.push_back(data);
+				}
+
+				dataBase_Text.close();
+
+				return dataBase_Vector;
+
+			} 
+			else 
+			{
+				throw("\n[ Erorr: unable to open the dataBase (TEXT VERSION) ]\n");
+				exit(2);
+			}
+
+		} 
+		catch (string error)
+		{
+			cout << error;
 		}
 
-		DB.close();
-
-		// [#2]
-		return v_DB;
 	}
 };
 
