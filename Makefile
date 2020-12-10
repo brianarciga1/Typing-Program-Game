@@ -354,6 +354,66 @@ Composite/src/init.cpp.s:
 	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/init.cpp.s
 .PHONY : Composite/src/init.cpp.s
 
+Observer/src/Observer.o: Observer/src/Observer.cpp.o
+
+.PHONY : Observer/src/Observer.o
+
+# target to build an object file
+Observer/src/Observer.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Observer/src/Observer.cpp.o
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Observer/src/Observer.cpp.o
+.PHONY : Observer/src/Observer.cpp.o
+
+Observer/src/Observer.i: Observer/src/Observer.cpp.i
+
+.PHONY : Observer/src/Observer.i
+
+# target to preprocess a source file
+Observer/src/Observer.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Observer/src/Observer.cpp.i
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Observer/src/Observer.cpp.i
+.PHONY : Observer/src/Observer.cpp.i
+
+Observer/src/Observer.s: Observer/src/Observer.cpp.s
+
+.PHONY : Observer/src/Observer.s
+
+# target to generate assembly for a file
+Observer/src/Observer.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Observer/src/Observer.cpp.s
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Observer/src/Observer.cpp.s
+.PHONY : Observer/src/Observer.cpp.s
+
+Observer/src/Subject.o: Observer/src/Subject.cpp.o
+
+.PHONY : Observer/src/Subject.o
+
+# target to build an object file
+Observer/src/Subject.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Observer/src/Subject.cpp.o
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Observer/src/Subject.cpp.o
+.PHONY : Observer/src/Subject.cpp.o
+
+Observer/src/Subject.i: Observer/src/Subject.cpp.i
+
+.PHONY : Observer/src/Subject.i
+
+# target to preprocess a source file
+Observer/src/Subject.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Observer/src/Subject.cpp.i
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Observer/src/Subject.cpp.i
+.PHONY : Observer/src/Subject.cpp.i
+
+Observer/src/Subject.s: Observer/src/Subject.cpp.s
+
+.PHONY : Observer/src/Subject.s
+
+# target to generate assembly for a file
+Observer/src/Subject.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Observer/src/Subject.cpp.s
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Observer/src/Subject.cpp.s
+.PHONY : Observer/src/Subject.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -438,6 +498,12 @@ help:
 	@echo "... Composite/src/init.o"
 	@echo "... Composite/src/init.i"
 	@echo "... Composite/src/init.s"
+	@echo "... Observer/src/Observer.o"
+	@echo "... Observer/src/Observer.i"
+	@echo "... Observer/src/Observer.s"
+	@echo "... Observer/src/Subject.o"
+	@echo "... Observer/src/Subject.i"
+	@echo "... Observer/src/Subject.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
