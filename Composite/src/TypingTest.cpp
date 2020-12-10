@@ -12,6 +12,7 @@ void TypingTest::run(int max_row, int max_col) {
         body->add_word(this->get_user_input(max_row, max_col, start));
         if(!running) {
             erase();
+            running = true;
             return;
         }
         body->display(false, body->get_row(), body->get_col());
@@ -19,7 +20,7 @@ void TypingTest::run(int max_row, int max_col) {
 }
 
 void TypingTest::get_text(int max_row, int max_col) {
-    std::vector<std::string> ref = {"Iff", "you", "set", "a", "your", "goals"/*, "ridiculously", "high", "and", "it\'s", "a", "failure,", "you", "will", "fail", "above", "everyone", "else\'s", "success."*/};
+    std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
     Passage* a = new Passage(max_row/3, max_col/4, ref);
     body = a;
 }
@@ -44,17 +45,20 @@ std::string TypingTest::get_user_input(int row, int col, time_t start) {
                 move(5 * (row-1) / 6, 0);
                 clrtoeol();
                 return ret;
+                break;
             }
             case KEY_BACKSPACE:
             {   
                 move(5 * (row-1)/6, 0);
                 clrtoeol();
                 if(ret.size() > 0) ret.pop_back();
+                break;
             }
             case 27:
             {
                 running = false;
                 return "";
+                break;
             }
         }
         ch = getch();

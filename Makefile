@@ -294,6 +294,36 @@ Composite/src/TypingTest.cpp.s:
 	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/TypingTest.cpp.s
 .PHONY : Composite/src/TypingTest.cpp.s
 
+Composite/src/UserList.o: Composite/src/UserList.cpp.o
+
+.PHONY : Composite/src/UserList.o
+
+# target to build an object file
+Composite/src/UserList.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/UserList.cpp.o
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/UserList.cpp.o
+.PHONY : Composite/src/UserList.cpp.o
+
+Composite/src/UserList.i: Composite/src/UserList.cpp.i
+
+.PHONY : Composite/src/UserList.i
+
+# target to preprocess a source file
+Composite/src/UserList.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/UserList.cpp.i
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/UserList.cpp.i
+.PHONY : Composite/src/UserList.cpp.i
+
+Composite/src/UserList.s: Composite/src/UserList.cpp.s
+
+.PHONY : Composite/src/UserList.s
+
+# target to generate assembly for a file
+Composite/src/UserList.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/UserList.cpp.s
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/UserList.cpp.s
+.PHONY : Composite/src/UserList.cpp.s
+
 Composite/src/Word.o: Composite/src/Word.cpp.o
 
 .PHONY : Composite/src/Word.o
@@ -353,6 +383,66 @@ Composite/src/init.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/init.cpp.s
 	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/init.cpp.s
 .PHONY : Composite/src/init.cpp.s
+
+Observer/src/Observer.o: Observer/src/Observer.cpp.o
+
+.PHONY : Observer/src/Observer.o
+
+# target to build an object file
+Observer/src/Observer.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Observer/src/Observer.cpp.o
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Observer/src/Observer.cpp.o
+.PHONY : Observer/src/Observer.cpp.o
+
+Observer/src/Observer.i: Observer/src/Observer.cpp.i
+
+.PHONY : Observer/src/Observer.i
+
+# target to preprocess a source file
+Observer/src/Observer.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Observer/src/Observer.cpp.i
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Observer/src/Observer.cpp.i
+.PHONY : Observer/src/Observer.cpp.i
+
+Observer/src/Observer.s: Observer/src/Observer.cpp.s
+
+.PHONY : Observer/src/Observer.s
+
+# target to generate assembly for a file
+Observer/src/Observer.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Observer/src/Observer.cpp.s
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Observer/src/Observer.cpp.s
+.PHONY : Observer/src/Observer.cpp.s
+
+Observer/src/Subject.o: Observer/src/Subject.cpp.o
+
+.PHONY : Observer/src/Subject.o
+
+# target to build an object file
+Observer/src/Subject.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Observer/src/Subject.cpp.o
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Observer/src/Subject.cpp.o
+.PHONY : Observer/src/Subject.cpp.o
+
+Observer/src/Subject.i: Observer/src/Subject.cpp.i
+
+.PHONY : Observer/src/Subject.i
+
+# target to preprocess a source file
+Observer/src/Subject.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Observer/src/Subject.cpp.i
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Observer/src/Subject.cpp.i
+.PHONY : Observer/src/Subject.cpp.i
+
+Observer/src/Subject.s: Observer/src/Subject.cpp.s
+
+.PHONY : Observer/src/Subject.s
+
+# target to generate assembly for a file
+Observer/src/Subject.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Observer/src/Subject.cpp.s
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Observer/src/Subject.cpp.s
+.PHONY : Observer/src/Subject.cpp.s
 
 main.o: main.cpp.o
 
@@ -432,12 +522,21 @@ help:
 	@echo "... Composite/src/TypingTest.o"
 	@echo "... Composite/src/TypingTest.i"
 	@echo "... Composite/src/TypingTest.s"
+	@echo "... Composite/src/UserList.o"
+	@echo "... Composite/src/UserList.i"
+	@echo "... Composite/src/UserList.s"
 	@echo "... Composite/src/Word.o"
 	@echo "... Composite/src/Word.i"
 	@echo "... Composite/src/Word.s"
 	@echo "... Composite/src/init.o"
 	@echo "... Composite/src/init.i"
 	@echo "... Composite/src/init.s"
+	@echo "... Observer/src/Observer.o"
+	@echo "... Observer/src/Observer.i"
+	@echo "... Observer/src/Observer.s"
+	@echo "... Observer/src/Subject.o"
+	@echo "... Observer/src/Subject.i"
+	@echo "... Observer/src/Subject.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
