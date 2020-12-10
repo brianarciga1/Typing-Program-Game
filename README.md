@@ -24,15 +24,9 @@ Authors: [Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://git
     * A leaderboard object would contain child Score (name TBD) objects and would change and return results based on test results and score queries.
 
 ## Class Diagram
- > Include a class diagram(s) for each design pattern and a description of the diagram(s). This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
 
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vSwanho9HYGWpyReDs0W0ro39obf76mRsjeyf73z6PT0jZE5E_Qc7GBUylH1muTeXfJJjXDmGRLVoDr/pub?w=2552&amp;h=1644">
 
- > ## Final deliverable
- > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
 ![Typing Gameplay - Incorrect words are highlighted](https://user-images.githubusercontent.com/56327086/101737483-caa1fe80-3a79-11eb-80dc-e40c713de45a.JPG)
 ![Test Results](https://user-images.githubusercontent.com/56327086/101737106-48193f00-3a79-11eb-9926-380cafc8cfb0.JPG)
@@ -46,5 +40,5 @@ To run the existing executable, enter the command:
   <code>./TypingTest</code>  
 and follow the instructions. 
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ Testing for non-void functions was done using GoogleTest. For features handling the program's GUI, the developer manually checked for bugs on normal, edge, and corner cases. 
  
