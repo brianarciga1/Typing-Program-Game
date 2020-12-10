@@ -35,7 +35,7 @@ void Initializer::run() {
         switch(ch) {
             case 'l':
             {
-                show_login(row, col);
+                data->login(row, col);
                 show_menu(row, col);
                 break;
             }
@@ -64,7 +64,13 @@ void Initializer::run() {
 
 void Initializer::show_menu(int row, int col) {
     erase();
-    mvprintw(0, 0, "TODO: Get info from Observer class");
+    if(data->get_curr_user_num() >= 0) {
+        mvaddstr(0, 0, data->get_current_user()->get_username().c_str());
+        mvaddstr(1, 0,"Press L to select a different user. ");
+    } 
+    else {
+        mvaddstr(0, 0, "Press L to create a new user.");
+    }
 
     char settings_message[] = "TODO: Implement settings";
     mvprintw(0, col - strlen(settings_message), settings_message);
@@ -92,15 +98,3 @@ void Initializer::show_settings(int row, int col) {
     }
 }
 
-void Initializer::show_login(int row, int col) {
-    erase();
-    attron(A_STANDOUT);
-    printw("Login is not yet implemented. Press any key to continue.");
-    attroff(A_STANDOUT);
-
-    int ch = getch();
-
-    while(ch < 1) {
-        ch = getch();
-    }
-}
