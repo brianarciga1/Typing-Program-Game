@@ -52,7 +52,7 @@ public:
 		catch (int err)
 		{
 		
-			cout << "\n[ Erorr: unable to open the dataBase ]\n";
+			cout << "\n[ Error: unable to open the dataBase ]\n";
 			exit(err);
 		}
 

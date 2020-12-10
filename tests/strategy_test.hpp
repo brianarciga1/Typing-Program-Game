@@ -34,8 +34,8 @@ TEST(STG_Test_DataBase, getDataBaseSuccess) {
     vector<string>  V;
     V = DB.get_dataBase("Strategy/TextGenerator/DataBase/TextGenerator_Quote_English.txt");
 
-    EXPECT_TRUE(V[0] == "Get busy living or get busy dying. Stephen King");
-    EXPECT_TRUE(V[39] == "Only the paranoid survive. Andy Grove, former CEO of Intel");
+    EXPECT_TRUE(V.at(0) == "Get busy living or get busy dying. ");
+    EXPECT_TRUE(V.at(39) == "Only the paranoid survive.");
 }      
 
 TEST(STG_Test_DataBase, getDataBaseFaild) {
@@ -128,7 +128,7 @@ TEST(STG_Test_QuoteGenerator, normalIndex0) {
         text += " ";
     }
 
-    EXPECT_TRUE(text == "Get busy living or get busy dying. Stephen King ");
+    EXPECT_EQ(text, "Get busy living or get busy dying. ");
 }
 
 TEST(STG_Test_QuoteGenerator, normalIndex1) {
@@ -145,7 +145,7 @@ TEST(STG_Test_QuoteGenerator, normalIndex1) {
         text += " ";
     }
 
-    EXPECT_TRUE(text == "When you reach the end of your rope, tie a knot in it and hang on. Franklin D. Roosevelt ");
+    EXPECT_EQ(text, "When you reach the end of your rope, tie a knot in it and hang on. ");
 }
 
 TEST(STG_Test_QuoteGenerator, normalIndex2) {
@@ -162,7 +162,7 @@ TEST(STG_Test_QuoteGenerator, normalIndex2) {
         text += " ";
     }
 
-    EXPECT_TRUE(text == "Only the paranoid survive. Andy Grove, former CEO of Intel ");
+    EXPECT_EQ(text, "Only the paranoid survive. ");
 }
 
 TEST(STG_Test_QuoteGenerator, outIndex0) {
@@ -202,7 +202,7 @@ TEST(STG_Test_QuoteGenerator, size2) {
     V = Q->generate(0);
 
     EXPECT_FLOAT_EQ(Q->size(), 40);
-    EXPECT_FLOAT_EQ(V.size(), 9);
+    EXPECT_FLOAT_EQ(V.size(), 7);
 }
 
 // --------------------------------------
