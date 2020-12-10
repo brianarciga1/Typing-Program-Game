@@ -23,16 +23,25 @@ public:
 // ----- [ 3rd, parse that index into the word, 4th return all the word as a vector ]
 	vector<string> generate(int wordCount) {
 
-		vector<string> sub_vector;
-
-		for( int i =0; i < wordCount; i++)
+		try
 		{
-			string data = _dataBase_Vector[rand() % this->size()];
-			stringstream dataBase_stream(data);
-			sub_vector.push_back(data);
-		}
+			if(wordCount <= 0) {throw 1;}
 
-		return sub_vector;
+			vector<string> sub_vector;
+
+			for( int i =0; i < wordCount; i++)
+			{
+				string data = _dataBase_Vector[rand() % this->size()];
+				stringstream dataBase_stream(data);
+				sub_vector.push_back(data);
+			}
+
+			return sub_vector;
+		}
+		catch(int err)
+		{
+			cout << "\n[ the index is out of range ]\n";
+            		exit(err);
+		}
 	}
 };
-
