@@ -294,6 +294,36 @@ Composite/src/TypingTest.cpp.s:
 	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/TypingTest.cpp.s
 .PHONY : Composite/src/TypingTest.cpp.s
 
+Composite/src/UserList.o: Composite/src/UserList.cpp.o
+
+.PHONY : Composite/src/UserList.o
+
+# target to build an object file
+Composite/src/UserList.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/UserList.cpp.o
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/UserList.cpp.o
+.PHONY : Composite/src/UserList.cpp.o
+
+Composite/src/UserList.i: Composite/src/UserList.cpp.i
+
+.PHONY : Composite/src/UserList.i
+
+# target to preprocess a source file
+Composite/src/UserList.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/UserList.cpp.i
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/UserList.cpp.i
+.PHONY : Composite/src/UserList.cpp.i
+
+Composite/src/UserList.s: Composite/src/UserList.cpp.s
+
+.PHONY : Composite/src/UserList.s
+
+# target to generate assembly for a file
+Composite/src/UserList.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Composite/src/UserList.cpp.s
+	$(MAKE) -f CMakeFiles/TypingTest.dir/build.make CMakeFiles/TypingTest.dir/Composite/src/UserList.cpp.s
+.PHONY : Composite/src/UserList.cpp.s
+
 Composite/src/Word.o: Composite/src/Word.cpp.o
 
 .PHONY : Composite/src/Word.o
@@ -492,6 +522,9 @@ help:
 	@echo "... Composite/src/TypingTest.o"
 	@echo "... Composite/src/TypingTest.i"
 	@echo "... Composite/src/TypingTest.s"
+	@echo "... Composite/src/UserList.o"
+	@echo "... Composite/src/UserList.i"
+	@echo "... Composite/src/UserList.s"
 	@echo "... Composite/src/Word.o"
 	@echo "... Composite/src/Word.i"
 	@echo "... Composite/src/Word.s"
