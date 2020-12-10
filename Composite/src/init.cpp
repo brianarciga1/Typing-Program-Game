@@ -71,7 +71,7 @@ void Initializer::show_menu(int row, int col) {
         mvaddstr(0, 0, "Press L to create a new user.");
     }
 
-    char settings_message[] = "Settings";
+    char settings_message[] = "Press S for Settings";
     mvprintw(0, col - strlen(settings_message), settings_message);
 
     std::vector<std::string> welcome;
@@ -100,12 +100,18 @@ void Initializer::show_settings(int row, int col) {
         switch(ch) {
             case '0': {
                 test->set_text_gen(new WordSetGenerator(new Language_English()));
+                break;
             }
             case '1': {
                 test->set_text_gen(new ParagraphGenerator(new Language_English()));
+                break;
             }
             case '2': {
                 test->set_text_gen(new QuoteGenerator(new Language_English()));
+                break;
+            }
+            default: {
+                continue;
             }
         }
     }
