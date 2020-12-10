@@ -34,9 +34,9 @@ Authors: [Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://git
  > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
- > Screenshots of the input/output after running your application
 ![Typing Gameplay](https://user-images.githubusercontent.com/56327086/101736905-f53f8780-3a78-11eb-801a-547ec9e831d0.JPG)
 ![Test Results](https://user-images.githubusercontent.com/56327086/101737106-48193f00-3a79-11eb-9926-380cafc8cfb0.JPG)
+![User Login](https://user-images.githubusercontent.com/56327086/101737319-8d3d7100-3a79-11eb-9490-8b9f399d4da8.JPG)
 
  ## Installation/Usage
 To build and compile: 
