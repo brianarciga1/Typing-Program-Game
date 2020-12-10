@@ -41,7 +41,7 @@ void Initializer::run() {
             case 'p':
                 test->get_text(row, col);
                 erase();
-                test->run(row, col);
+                test->run(row, col, data->get_current_user());
                 test->display_results(row, col);
                 show_menu(row, col);
                 break;
@@ -64,7 +64,8 @@ void Initializer::run() {
 void Initializer::show_menu(int row, int col) {
     erase();
     if(data->get_curr_user_num() >= 0) {
-        mvaddstr(0, 0, data->get_current_user()->get_username().c_str());
+        mvaddstr(0, 0, "Current user: ");
+        addstr(data->get_current_user()->get_username().c_str());
         mvaddstr(1, 0,"Press L to select a different user. ");
     } 
     else {

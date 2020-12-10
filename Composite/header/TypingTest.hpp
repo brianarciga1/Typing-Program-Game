@@ -6,6 +6,8 @@
 #include "Text.hpp"
 #include "Word.hpp"
 #include "../../Strategy/TextGenerator/TextGenerator.hpp"
+#include "../../Observer/header/Observer.hpp"
+#include "../../Observer/header/Subject.hpp"
 #include <ctime>
 #include <string>
 
@@ -16,7 +18,7 @@ class TypingTest {
         bool running = true;
         TextGenerator* text_gen = new WordSetGenerator(new Language_English());
     public: 
-        void run(int max_row, int max_col);
+        void run(int max_row, int max_col, Observer* current_user);
 
         void get_text(int max_row, int max_col);
 

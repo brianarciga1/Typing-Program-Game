@@ -1,6 +1,6 @@
 #include "../header/TypingTest.hpp"
 
-void TypingTest::run(int max_row, int max_col) {
+void TypingTest::run(int max_row, int max_col, Observer* current_user) {
 
     body->set_max_col(3 * max_col / 4);
     mvaddstr(body->get_row()-1, body->get_col(), "Press ESC to quit test");
@@ -16,6 +16,14 @@ void TypingTest::run(int max_row, int max_col) {
             return;
         }
         body->display(false, body->get_row(), body->get_col());
+    }
+    if(body->get_accuracy() > current_user->get_accuracy()) {
+        current_user->set_data(current_user->get_username(), current_user->get_highscore(), body->get_accuracy());
+    }
+    double wpm = body->get_correct_characters() / 5.0;
+    wpm = wpm / (timer / 60.0);
+    if(wpm > current_user->get_highscore()) {
+        current_user->set_data(current_user->get_username(), wpm, body->get_accuracy());
     }
 }
 

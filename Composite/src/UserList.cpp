@@ -18,15 +18,15 @@ void UserList::login(int row, int col) {
         addstr("Press \"a\" to add a new user. Press ESC to exit.");
     }
     mvaddstr(1, 0, "Username");
-    mvaddstr(1, 15, "WPM");
-    mvaddstr(1, 22, "Accuracy");
-    mvaddstr(1, 32, "User ID");
+    mvaddstr(1, 15, "Best WPM");
+    mvaddstr(1, 29, "Best Accuracy");
+    mvaddstr(1, 44, "User ID");
     if(!users.empty()){
         for(; i < users.size(); ++i) {
             mvaddstr(i+2, 0, users.at(i)->get_username().c_str());
-            mvaddstr(i+2, 15, (truncate(users.at(i)->get_highscore())).c_str());
-            mvaddstr(i+2, 22, (truncate(users.at(i)->get_accuracy())+"%").c_str());
-            mvaddstr(i+2, 32, std::to_string(i).c_str());
+            mvaddstr(i+2, 15, (truncate(users.at(i)->get_highscore()/100.0)).c_str());
+            mvaddstr(i+2, 29, (truncate(users.at(i)->get_accuracy())+"%").c_str());
+            mvaddstr(i+2, 44, std::to_string(i).c_str());
         }
     }
     
