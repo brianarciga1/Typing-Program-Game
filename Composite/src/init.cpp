@@ -1,11 +1,7 @@
 #include "../header/init.hpp"
-#include <cstring>
-#include <string>
-#include <vector>
-#include <unistd.h>
-#include <iostream>
 
 void Initializer::run() {
+    srand(std::time(NULL));
     initscr();
     int row, col, ch;
 
@@ -66,7 +62,7 @@ void Initializer::show_menu(int row, int col) {
     if(data->get_curr_user_num() >= 0) {
         mvaddstr(0, 0, "Current user: ");
         addstr(data->get_current_user()->get_username().c_str());
-        mvaddstr(1, 0,"Press L to select a different user. ");
+        mvaddstr(1, 0,"Press L to show user list. ");
     } 
     else {
         mvaddstr(0, 0, "Press L to create a new user.");
@@ -88,9 +84,9 @@ void Initializer::show_menu(int row, int col) {
 void Initializer::show_settings(int row, int col) {
     erase();
     attroff(A_STANDOUT);
-    mvaddstr(0, 0, "Press 0 to set the test type to     Random Words");
-    mvaddstr(1, 0, "Press 1 to set the test type to     Random Paragraph");
-    mvaddstr(2, 0, "Press 2 to set the test type to     Random Quote");
+    mvaddstr(0, 0, "Press 0 to set the test type to Random Words");
+    mvaddstr(1, 0, "Press 1 to set the test type to Random Paragraph");
+    mvaddstr(2, 0, "Press 2 to set the test type to Random Quote");
     mvaddstr(3, 0, "Press ESC to exit");
 
 

@@ -6,6 +6,12 @@
 #include "../../Observer/header/Observer.hpp"
 #include "../../Observer/header/Subject.hpp"
 #include "UserList.hpp"
+#include <cstring>
+#include <string>
+#include <vector>
+#include <unistd.h>
+#include <iostream>
+#include <time.h>
 
 class Initializer {
     public: 
