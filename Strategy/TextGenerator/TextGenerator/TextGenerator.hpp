@@ -19,7 +19,8 @@ protected:
 
 public:
 
-	virtual vector<string>	generate(int) = 0;
+	virtual vector<string>	generate() = 0;
+	virtual vector<string> generate(int) = 0;
 
 public:	
 	int 	size(){ return _dataBase_Vector.size(); }
