@@ -6,7 +6,6 @@
 #include <iostream>
 
 void Initializer::run() {
-    TypingTest* test = new TypingTest();
     initscr();
     int row, col, ch;
 
@@ -72,7 +71,7 @@ void Initializer::show_menu(int row, int col) {
         mvaddstr(0, 0, "Press L to create a new user.");
     }
 
-    char settings_message[] = "TODO: Implement settings";
+    char settings_message[] = "Settings";
     mvprintw(0, col - strlen(settings_message), settings_message);
 
     std::vector<std::string> welcome;
@@ -87,14 +86,28 @@ void Initializer::show_menu(int row, int col) {
 
 void Initializer::show_settings(int row, int col) {
     erase();
-    attron(A_STANDOUT);
-    printw("Settings is not yet implemented. Press any key to continue.");
     attroff(A_STANDOUT);
+    mvaddstr(0, 0, "Press 0 to set the test type to     Random Words");
+    mvaddstr(1, 0, "Press 1 to set the test type to     Random Paragraph");
+    mvaddstr(2, 0, "Press 2 to set the test type to     Random Quote");
+    mvaddstr(3, 0, "Press ESC to exit");
+
 
     int ch = getch();
 
     while(ch < 1) {
         ch = getch();
+        switch(ch) {
+            case '0': {
+                test->set_text_gen(new WordSetGenerator(new Language_English()));
+            }
+            case '1': {
+                test->set_text_gen(new ParagraphGenerator(new Language_English()));
+            }
+            case '2': {
+                test->set_text_gen(new QuoteGenerator(new Language_English()));
+            }
+        }
     }
 }
 

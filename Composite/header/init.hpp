@@ -11,6 +11,7 @@ class Initializer {
     public: 
         void run();
     private:
+        TypingTest* test = new TypingTest();
         UserList* data = new UserList();
         void show_menu(int row, int col);
         void show_settings(int row, int col); 

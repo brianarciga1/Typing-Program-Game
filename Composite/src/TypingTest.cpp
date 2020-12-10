@@ -20,7 +20,7 @@ void TypingTest::run(int max_row, int max_col) {
 }
 
 void TypingTest::get_text(int max_row, int max_col) {
-    std::vector<std::string> ref = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."};
+    std::vector<std::string> ref = text_gen->generate();
     Passage* a = new Passage(max_row/3, max_col/4, ref);
     body = a;
 }
@@ -128,3 +128,10 @@ void TypingTest::display_results(unsigned row, unsigned col) {
         }
     }
 }   
+
+void TypingTest::set_text_gen(TextGenerator* input) {
+    if(text_gen != nullptr) {
+        delete text_gen;
+    }
+    text_gen = input;
+}
