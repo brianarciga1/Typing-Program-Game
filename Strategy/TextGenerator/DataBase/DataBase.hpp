@@ -45,14 +45,15 @@ public:
 			} 
 			else 
 			{
-				throw("\n[ Erorr: unable to open the dataBase (TEXT VERSION) ]\n");
-				exit(2);
+				throw(2);
 			}
 
 		} 
-		catch (string error)
+		catch (int err)
 		{
-			cout << error;
+		
+			cout << "\n[ Erorr: unable to open the dataBase ]\n";
+			exit(err);
 		}
 
 	}
