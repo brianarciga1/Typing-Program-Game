@@ -6,7 +6,16 @@ Authors: [Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://git
 * Typing is an essential skill in today's technology-based society, especially to people who type for a living. The first thing that comes to mind with the thought of "professional typist" is programming. As a programmer, be it in C++ or SQL, typing is the most important interface between a programmer and their computer. Typing efficiency is important to programmers because they need to be efficient in writing code, and finding the where each letter is on a keyboard should be the least of their worries. 
   * There will be choices of text in the form of a set of random words, or a paragraph or quote. The test material will be pulled from a local database. 
   * Typing tests will be timed, with choices of time limits, such as 30 seconds, 1 minute, or two minutes. 
-* We are using [ncurses](https://pubs.opengroup.org/onlinepubs/7908799/xcurses/curses.h.html) be our main user interface by detecting keypresses. 
+### Technologies
+[C++](https://www.cplusplus.com/) is our main programming language.  
+[Git](https://git-scm.com/) is our version control software.  
+[ncurses](https://pubs.opengroup.org/onlinepubs/7908799/xcurses/curses.h.html) is our main input/output tool, taking in key presses, then refreshing and outputting text in a window.  
+[Vim](https://www.vim.org/) is our low-level text editor.  
+[Visual Studio Code](https://code.visualstudio.com/) is our high-level text editor.  
+[CMake](https://cmake.org/) is used to generate Makefiles.  
+[Google Test Framework](https://github.com/google/googletest) is the main unit testing tool we are using. 
+
+### Design Patterns
 * The input will be the keypresses of the user. The output will be the words that the user types, in colors depending on the correctness of the user's input. 
 * We intend to use the Composite, Observer and Strategy design patterns for the project. 
   * Composite will be useful to manage the multiple components that will be a part of the test, such as the text material window, timer, and key input. 
