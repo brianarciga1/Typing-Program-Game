@@ -44,187 +44,187 @@ and follow the instructions.
  Testing for non-void functions was done using GoogleTest. For features handling the program's GUI, the developer manually checked for bugs on normal, edge, and corner cases. 
  <details><summary> GoogleTest output </summary>
  <p>
-```./test
-[==========] Running 65 tests from 16 test suites.
-[----------] Global test environment set-up.
-[----------] 3 tests from CompositeWordConstructor
-[ RUN      ] CompositeWordConstructor.Default
-[       OK ] CompositeWordConstructor.Default (0 ms)
-[ RUN      ] CompositeWordConstructor.OneWord
-[       OK ] CompositeWordConstructor.OneWord (0 ms)
-[ RUN      ] CompositeWordConstructor.PosWords
-[       OK ] CompositeWordConstructor.PosWords (0 ms)
-[----------] 3 tests from CompositeWordConstructor (0 ms total)
-
-[----------] 7 tests from CompositeWordCheck
-[ RUN      ] CompositeWordCheck.NoInput
-[       OK ] CompositeWordCheck.NoInput (0 ms)
-[ RUN      ] CompositeWordCheck.WordEmpty
-[       OK ] CompositeWordCheck.WordEmpty (0 ms)
-[ RUN      ] CompositeWordCheck.RefEmpty
-[       OK ] CompositeWordCheck.RefEmpty (0 ms)
-[ RUN      ] CompositeWordCheck.Incorrect
-[       OK ] CompositeWordCheck.Incorrect (0 ms)
-[ RUN      ] CompositeWordCheck.Correct
-[       OK ] CompositeWordCheck.Correct (0 ms)
-[ RUN      ] CompositeWordCheck.Punctuation
-[       OK ] CompositeWordCheck.Punctuation (0 ms)
-[ RUN      ] CompositeWordCheck.Case
-[       OK ] CompositeWordCheck.Case (0 ms)
-[----------] 7 tests from CompositeWordCheck (0 ms total)
-
-[----------] 4 tests from CompositeWordLen
-[ RUN      ] CompositeWordLen.Empty
-[       OK ] CompositeWordLen.Empty (0 ms)
-[ RUN      ] CompositeWordLen.Pos
-[       OK ] CompositeWordLen.Pos (0 ms)
-[ RUN      ] CompositeWordLen.LargePos
-[       OK ] CompositeWordLen.LargePos (0 ms)
-[ RUN      ] CompositeWordLen.Punctuation
-[       OK ] CompositeWordLen.Punctuation (0 ms)
-[----------] 4 tests from CompositeWordLen (0 ms total)
-
-[----------] 2 tests from CompositeWordSet
-[ RUN      ] CompositeWordSet.Incorrect
-[       OK ] CompositeWordSet.Incorrect (0 ms)
-[ RUN      ] CompositeWordSet.Correct
-[       OK ] CompositeWordSet.Correct (0 ms)
-[----------] 2 tests from CompositeWordSet (0 ms total)
-
-[----------] 1 test from CompositePassageConstructor
-[ RUN      ] CompositePassageConstructor.Constructor
-[       OK ] CompositePassageConstructor.Constructor (0 ms)
-[----------] 1 test from CompositePassageConstructor (0 ms total)
-
-[----------] 4 tests from CompositePassageLen
-[ RUN      ] CompositePassageLen.Empty
-[       OK ] CompositePassageLen.Empty (0 ms)
-[ RUN      ] CompositePassageLen.Incomplete
-[       OK ] CompositePassageLen.Incomplete (0 ms)
-[ RUN      ] CompositePassageLen.CompleteIncorrect
-[       OK ] CompositePassageLen.CompleteIncorrect (0 ms)
-[ RUN      ] CompositePassageLen.OneLongWord
-[       OK ] CompositePassageLen.OneLongWord (0 ms)
-[----------] 4 tests from CompositePassageLen (1 ms total)
-
-[----------] 9 tests from CompositePassageCorrect
-[ RUN      ] CompositePassageCorrect.OneEmpty
-[       OK ] CompositePassageCorrect.OneEmpty (0 ms)
-[ RUN      ] CompositePassageCorrect.OneCorrect
-[       OK ] CompositePassageCorrect.OneCorrect (0 ms)
-[ RUN      ] CompositePassageCorrect.TooLong
-[       OK ] CompositePassageCorrect.TooLong (0 ms)
-[ RUN      ] CompositePassageCorrect.TooShort
-[       OK ] CompositePassageCorrect.TooShort (0 ms)
-[ RUN      ] CompositePassageCorrect.BeforeEmpty
-[       OK ] CompositePassageCorrect.BeforeEmpty (0 ms)
-[ RUN      ] CompositePassageCorrect.BeforeIncorrect
-[       OK ] CompositePassageCorrect.BeforeIncorrect (0 ms)
-[ RUN      ] CompositePassageCorrect.MiddleIncorrect
-[       OK ] CompositePassageCorrect.MiddleIncorrect (0 ms)
-[ RUN      ] CompositePassageCorrect.SmallAllCorrect
-[       OK ] CompositePassageCorrect.SmallAllCorrect (0 ms)
-[ RUN      ] CompositePassageCorrect.LargeAllCorrect
-[       OK ] CompositePassageCorrect.LargeAllCorrect (0 ms)
-[----------] 9 tests from CompositePassageCorrect (0 ms total)
-
-[----------] 5 tests from CompositePassageCheck
-[ RUN      ] CompositePassageCheck.Empty
-[       OK ] CompositePassageCheck.Empty (0 ms)
-[ RUN      ] CompositePassageCheck.IncompleteCorrect
-[       OK ] CompositePassageCheck.IncompleteCorrect (0 ms)
-[ RUN      ] CompositePassageCheck.IncompleteIncorrect
-[       OK ] CompositePassageCheck.IncompleteIncorrect (0 ms)
-[ RUN      ] CompositePassageCheck.CompleteCorrect
-[       OK ] CompositePassageCheck.CompleteCorrect (0 ms)
-[ RUN      ] CompositePassageCheck.CompleteIncorrect
-[       OK ] CompositePassageCheck.CompleteIncorrect (0 ms)
-[----------] 5 tests from CompositePassageCheck (0 ms total)
-
-[----------] 5 tests from CompositeTestGetAccuracy
-[ RUN      ] CompositeTestGetAccuracy.Empty
-[       OK ] CompositeTestGetAccuracy.Empty (1 ms)
-[ RUN      ] CompositeTestGetAccuracy.Fifty
-[       OK ] CompositeTestGetAccuracy.Fifty (0 ms)
-[ RUN      ] CompositeTestGetAccuracy.RoundUp
-[       OK ] CompositeTestGetAccuracy.RoundUp (0 ms)
-[ RUN      ] CompositeTestGetAccuracy.RoundDown
-[       OK ] CompositeTestGetAccuracy.RoundDown (0 ms)
-[ RUN      ] CompositeTestGetAccuracy.Perfect
-[       OK ] CompositeTestGetAccuracy.Perfect (0 ms)
-[----------] 5 tests from CompositeTestGetAccuracy (1 ms total)
-
-[----------] 2 tests from STG_Test_Language
-[ RUN      ] STG_Test_Language.English
-[       OK ] STG_Test_Language.English (0 ms)
-[ RUN      ] STG_Test_Language.Spanish
-[       OK ] STG_Test_Language.Spanish (0 ms)
-[----------] 2 tests from STG_Test_Language (0 ms total)
-
-[----------] 2 tests from STG_Test_DataBase
-[ RUN      ] STG_Test_DataBase.getDataBaseSuccess
-[       OK ] STG_Test_DataBase.getDataBaseSuccess (0 ms)
-[ RUN      ] STG_Test_DataBase.getDataBaseFaild
-[       OK ] STG_Test_DataBase.getDataBaseFaild (1 ms)
-[----------] 2 tests from STG_Test_DataBase (1 ms total)
-
-[----------] 6 tests from STG_Test_ParagraphGenerator
-[ RUN      ] STG_Test_ParagraphGenerator.normalIndex
-[       OK ] STG_Test_ParagraphGenerator.normalIndex (0 ms)
-[ RUN      ] STG_Test_ParagraphGenerator.outIndex0
-[       OK ] STG_Test_ParagraphGenerator.outIndex0 (1 ms)
-[ RUN      ] STG_Test_ParagraphGenerator.outIndex1
-[       OK ] STG_Test_ParagraphGenerator.outIndex1 (1 ms)
+```./test  
+[==========] Running 65 tests from 16 test suites.  
+[----------] Global test environment set-up.  
+[----------] 3 tests from CompositeWordConstructor  
+[ RUN      ] CompositeWordConstructor.Default  
+[       OK ] CompositeWordConstructor.Default (0 ms)  
+[ RUN      ] CompositeWordConstructor.OneWord  
+[       OK ] CompositeWordConstructor.OneWord (0 ms)  
+[ RUN      ] CompositeWordConstructor.PosWords  
+[       OK ] CompositeWordConstructor.PosWords (0 ms)  
+[----------] 3 tests from CompositeWordConstructor (1 ms total)  
+  
+[----------] 7 tests from CompositeWordCheck  
+[ RUN      ] CompositeWordCheck.NoInput  
+[       OK ] CompositeWordCheck.NoInput (0 ms)  
+[ RUN      ] CompositeWordCheck.WordEmpty  
+[       OK ] CompositeWordCheck.WordEmpty (0 ms)  
+[ RUN      ] CompositeWordCheck.RefEmpty  
+[       OK ] CompositeWordCheck.RefEmpty (0 ms)  
+[ RUN      ] CompositeWordCheck.Incorrect  
+[       OK ] CompositeWordCheck.Incorrect (0 ms)  
+[ RUN      ] CompositeWordCheck.Correct  
+[       OK ] CompositeWordCheck.Correct (0 ms)  
+[ RUN      ] CompositeWordCheck.Punctuation  
+[       OK ] CompositeWordCheck.Punctuation (0 ms)  
+[ RUN      ] CompositeWordCheck.Case  
+[       OK ] CompositeWordCheck.Case (0 ms)  
+[----------] 7 tests from CompositeWordCheck (0 ms total)  
+  
+[----------] 4 tests from CompositeWordLen  
+[ RUN      ] CompositeWordLen.Empty  
+[       OK ] CompositeWordLen.Empty (0 ms)  
+[ RUN      ] CompositeWordLen.Pos  
+[       OK ] CompositeWordLen.Pos (0 ms)  
+[ RUN      ] CompositeWordLen.LargePos  
+[       OK ] CompositeWordLen.LargePos (0 ms)  
+[ RUN      ] CompositeWordLen.Punctuation  
+[       OK ] CompositeWordLen.Punctuation (0 ms)  
+[----------] 4 tests from CompositeWordLen (0 ms total)  
+  
+[----------] 2 tests from CompositeWordSet  
+[ RUN      ] CompositeWordSet.Incorrect  
+[       OK ] CompositeWordSet.Incorrect (0 ms)  
+[ RUN      ] CompositeWordSet.Correct  
+[       OK ] CompositeWordSet.Correct (0 ms)  
+[----------] 2 tests from CompositeWordSet (0 ms total)  
+  
+[----------] 1 test from CompositePassageConstructor  
+[ RUN      ] CompositePassageConstructor.Constructor  
+[       OK ] CompositePassageConstructor.Constructor (0 ms)  
+[----------] 1 test from CompositePassageConstructor (0 ms total)  
+  
+[----------] 4 tests from CompositePassageLen  
+[ RUN      ] CompositePassageLen.Empty  
+[       OK ] CompositePassageLen.Empty (0 ms)  
+[ RUN      ] CompositePassageLen.Incomplete  
+[       OK ] CompositePassageLen.Incomplete (0 ms)  
+[ RUN      ] CompositePassageLen.CompleteIncorrect  
+[       OK ] CompositePassageLen.CompleteIncorrect (0 ms)  
+[ RUN      ] CompositePassageLen.OneLongWord  
+[       OK ] CompositePassageLen.OneLongWord (0 ms)  
+[----------] 4 tests from CompositePassageLen (1 ms total)  
+  
+[----------] 9 tests from CompositePassageCorrect  
+[ RUN      ] CompositePassageCorrect.OneEmpty  
+[       OK ] CompositePassageCorrect.OneEmpty (0 ms)  
+[ RUN      ] CompositePassageCorrect.OneCorrect  
+[       OK ] CompositePassageCorrect.OneCorrect (0 ms)  
+[ RUN      ] CompositePassageCorrect.TooLong  
+[       OK ] CompositePassageCorrect.TooLong (0 ms)  
+[ RUN      ] CompositePassageCorrect.TooShort  
+[       OK ] CompositePassageCorrect.TooShort (0 ms)  
+[ RUN      ] CompositePassageCorrect.BeforeEmpty  
+[       OK ] CompositePassageCorrect.BeforeEmpty (0 ms)  
+[ RUN      ] CompositePassageCorrect.BeforeIncorrect  
+[       OK ] CompositePassageCorrect.BeforeIncorrect (0 ms)  
+[ RUN      ] CompositePassageCorrect.MiddleIncorrect  
+[       OK ] CompositePassageCorrect.MiddleIncorrect (0 ms)  
+[ RUN      ] CompositePassageCorrect.SmallAllCorrect  
+[       OK ] CompositePassageCorrect.SmallAllCorrect (0 ms)  
+[ RUN      ] CompositePassageCorrect.LargeAllCorrect  
+[       OK ] CompositePassageCorrect.LargeAllCorrect (0 ms)  
+[----------] 9 tests from CompositePassageCorrect (0 ms total)  
+  
+[----------] 5 tests from CompositePassageCheck  
+[ RUN      ] CompositePassageCheck.Empty  
+[       OK ] CompositePassageCheck.Empty (0 ms)  
+[ RUN      ] CompositePassageCheck.IncompleteCorrect  
+[       OK ] CompositePassageCheck.IncompleteCorrect (0 ms)  
+[ RUN      ] CompositePassageCheck.IncompleteIncorrect  
+[       OK ] CompositePassageCheck.IncompleteIncorrect (0 ms)  
+[ RUN      ] CompositePassageCheck.CompleteCorrect  
+[       OK ] CompositePassageCheck.CompleteCorrect (0 ms)  
+[ RUN      ] CompositePassageCheck.CompleteIncorrect  
+[       OK ] CompositePassageCheck.CompleteIncorrect (0 ms)  
+[----------] 5 tests from CompositePassageCheck (1 ms total)  
+  
+[----------] 5 tests from CompositeTestGetAccuracy  
+[ RUN      ] CompositeTestGetAccuracy.Empty  
+[       OK ] CompositeTestGetAccuracy.Empty (0 ms)  
+[ RUN      ] CompositeTestGetAccuracy.Fifty  
+[       OK ] CompositeTestGetAccuracy.Fifty (0 ms)  
+[ RUN      ] CompositeTestGetAccuracy.RoundUp  
+[       OK ] CompositeTestGetAccuracy.RoundUp (0 ms)  
+[ RUN      ] CompositeTestGetAccuracy.RoundDown  
+[       OK ] CompositeTestGetAccuracy.RoundDown (0 ms)  
+[ RUN      ] CompositeTestGetAccuracy.Perfect  
+[       OK ] CompositeTestGetAccuracy.Perfect (0 ms)  
+[----------] 5 tests from CompositeTestGetAccuracy (1 ms total)  
+  
+[----------] 2 tests from STG_Test_Language  
+[ RUN      ] STG_Test_Language.English  
+[       OK ] STG_Test_Language.English (0 ms)  
+[ RUN      ] STG_Test_Language.Spanish  
+[       OK ] STG_Test_Language.Spanish (0 ms)  
+[----------] 2 tests from STG_Test_Language (0 ms total)  
+  
+[----------] 2 tests from STG_Test_DataBase  
+[ RUN      ] STG_Test_DataBase.getDataBaseSuccess  
+[       OK ] STG_Test_DataBase.getDataBaseSuccess (0 ms)  
+[ RUN      ] STG_Test_DataBase.getDataBaseFaild  
+[       OK ] STG_Test_DataBase.getDataBaseFaild (1 ms)  
+[----------] 2 tests from STG_Test_DataBase (1 ms total)  
+  
+[----------] 6 tests from STG_Test_ParagraphGenerator  
+[ RUN      ] STG_Test_ParagraphGenerator.normalIndex  
+[       OK ] STG_Test_ParagraphGenerator.normalIndex (0 ms)  
+[ RUN      ] STG_Test_ParagraphGenerator.outIndex0  
+[       OK ] STG_Test_ParagraphGenerator.outIndex0 (1 ms)  
+[ RUN      ] STG_Test_ParagraphGenerator.outIndex1  
+[       OK ] STG_Test_ParagraphGenerator.outIndex1 (2 ms)  
 [ RUN      ] STG_Test_ParagraphGenerator.outIndex2
-[       OK ] STG_Test_ParagraphGenerator.outIndex2 (1 ms)
-[ RUN      ] STG_Test_ParagraphGenerator.size1
-[       OK ] STG_Test_ParagraphGenerator.size1 (0 ms)
-[ RUN      ] STG_Test_ParagraphGenerator.size2
-[       OK ] STG_Test_ParagraphGenerator.size2 (0 ms)
-[----------] 6 tests from STG_Test_ParagraphGenerator (4 ms total)
-
-[----------] 8 tests from STG_Test_QuoteGenerator
-[ RUN      ] STG_Test_QuoteGenerator.normalIndex0
-[       OK ] STG_Test_QuoteGenerator.normalIndex0 (0 ms)
-[ RUN      ] STG_Test_QuoteGenerator.normalIndex1
-[       OK ] STG_Test_QuoteGenerator.normalIndex1 (0 ms)
-[ RUN      ] STG_Test_QuoteGenerator.normalIndex2
-[       OK ] STG_Test_QuoteGenerator.normalIndex2 (0 ms)
-[ RUN      ] STG_Test_QuoteGenerator.outIndex0
-[       OK ] STG_Test_QuoteGenerator.outIndex0 (2 ms)
-[ RUN      ] STG_Test_QuoteGenerator.outIndex1
-[       OK ] STG_Test_QuoteGenerator.outIndex1 (1 ms)
-[ RUN      ] STG_Test_QuoteGenerator.outIndex2
-[       OK ] STG_Test_QuoteGenerator.outIndex2 (1 ms)
-[ RUN      ] STG_Test_QuoteGenerator.size1
-[       OK ] STG_Test_QuoteGenerator.size1 (0 ms)
-[ RUN      ] STG_Test_QuoteGenerator.size2
-[       OK ] STG_Test_QuoteGenerator.size2 (0 ms)
-[----------] 8 tests from STG_Test_QuoteGenerator (4 ms total)
-
-[----------] 3 tests from STG_Test_WordSetGenerator
-[ RUN      ] STG_Test_WordSetGenerator.outIndex0
-[       OK ] STG_Test_WordSetGenerator.outIndex0 (1 ms)
-[ RUN      ] STG_Test_WordSetGenerator.outIndex1
-[       OK ] STG_Test_WordSetGenerator.outIndex1 (1 ms)
-[ RUN      ] STG_Test_WordSetGenerator.outIndex2
-[       OK ] STG_Test_WordSetGenerator.outIndex2 (0 ms)
-[----------] 3 tests from STG_Test_WordSetGenerator (3 ms total)
-
-[----------] 1 test from IObserver
-[ RUN      ] IObserver.AddUser
-[       OK ] IObserver.AddUser (0 ms)
-[----------] 1 test from IObserver (0 ms total)
-
-[----------] 3 tests from Observer
-[ RUN      ] Observer.AddUser2
-[       OK ] Observer.AddUser2 (0 ms)
-[ RUN      ] Observer.AddUser3
-[       OK ] Observer.AddUser3 (0 ms)
-[ RUN      ] Observer.AddUser4
-[       OK ] Observer.AddUser4 (0 ms)
-[----------] 3 tests from Observer (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 65 tests from 16 test suites ran. (14 ms total)
+[       OK ] STG_Test_ParagraphGenerator.outIndex2 (1 ms)  
+[ RUN      ] STG_Test_ParagraphGenerator.size1  
+[       OK ] STG_Test_ParagraphGenerator.size1 (0 ms)  
+[ RUN      ] STG_Test_ParagraphGenerator.size2  
+[       OK ] STG_Test_ParagraphGenerator.size2 (0 ms)  
+[----------] 6 tests from STG_Test_ParagraphGenerator (4 ms total)  
+  
+[----------] 8 tests from STG_Test_QuoteGenerator  
+[ RUN      ] STG_Test_QuoteGenerator.normalIndex0  
+[       OK ] STG_Test_QuoteGenerator.normalIndex0 (0 ms)  
+[ RUN      ] STG_Test_QuoteGenerator.normalIndex1  
+[       OK ] STG_Test_QuoteGenerator.normalIndex1 (1 ms)  
+[ RUN      ] STG_Test_QuoteGenerator.normalIndex2  
+[       OK ] STG_Test_QuoteGenerator.normalIndex2 (0 ms)  
+[ RUN      ] STG_Test_QuoteGenerator.outIndex0  
+[       OK ] STG_Test_QuoteGenerator.outIndex0 (1 ms)  
+[ RUN      ] STG_Test_QuoteGenerator.outIndex1  
+[       OK ] STG_Test_QuoteGenerator.outIndex1 (1 ms)  
+[ RUN      ] STG_Test_QuoteGenerator.outIndex2  
+[       OK ] STG_Test_QuoteGenerator.outIndex2 (1 ms)  
+[ RUN      ] STG_Test_QuoteGenerator.size1  
+[       OK ] STG_Test_QuoteGenerator.size1 (0 ms)  
+[ RUN      ] STG_Test_QuoteGenerator.size2  
+[       OK ] STG_Test_QuoteGenerator.size2 (0 ms)  
+[----------] 8 tests from STG_Test_QuoteGenerator (5 ms total)   
+  
+[----------] 3 tests from STG_Test_WordSetGenerator  
+[ RUN      ] STG_Test_WordSetGenerator.outIndex0  
+[       OK ] STG_Test_WordSetGenerator.outIndex0 (1 ms)  
+[ RUN      ] STG_Test_WordSetGenerator.outIndex1  
+[       OK ] STG_Test_WordSetGenerator.outIndex1 (1 ms)  
+[ RUN      ] STG_Test_WordSetGenerator.outIndex2  
+[       OK ] STG_Test_WordSetGenerator.outIndex2 (0 ms)  
+[----------] 3 tests from STG_Test_WordSetGenerator (2 ms total)  
+  
+[----------] 1 test from IObserver  
+[ RUN      ] IObserver.AddUser  
+[       OK ] IObserver.AddUser (0 ms)  
+[----------] 1 test from IObserver (0 ms total)  
+  
+[----------] 3 tests from Observer  
+[ RUN      ] Observer.AddUser2  
+[       OK ] Observer.AddUser2 (0 ms)  
+[ RUN      ] Observer.AddUser3  
+[       OK ] Observer.AddUser3 (0 ms)  
+[ RUN      ] Observer.AddUser4  
+[       OK ] Observer.AddUser4 (0 ms)  
+[----------] 3 tests from Observer (0 ms total)  
+  
+[----------] Global test environment tear-down  
+[==========] 65 tests from 16 test suites ran. (16 ms total)  
 [  PASSED  ] 65 tests.```
