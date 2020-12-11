@@ -43,6 +43,11 @@ Authors: [Scott Vo](https://github.com/hscottvo), [Danin Namiranian](https://git
 ![User Login](https://user-images.githubusercontent.com/56327086/101737319-8d3d7100-3a79-11eb-9490-8b9f399d4da8.JPG)
 
  ## Installation/Usage
+First, clone the repository using git, then use ```cd``` to move into the repo. 
+``` 
+git clone https://github.com/cs100/final-project-svo021-dnami001-barci003.git
+cd final-project-svo021-dnami001-barci003
+```
 To build and compile: 
   In your terminal, install the [ncurses](https://pubs.opengroup.org/onlinepubs/7908799/xcurses/curses.h.html) library by entering the command:  
   <code>sudo apt-get install libncurses5-dev libncursesw5-dev</code>  
